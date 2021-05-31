@@ -8,6 +8,18 @@ app.get('/', (req, res) => {
   res.send('this is the response in the / route')
 })
 
+app.post('/', (req, res) => {
+  res.send('this is the response in the / route of the post command')
+})
+
+app.delete('/', (req, res) => {
+  res.send('this is the response in the / route of the delete command')
+})
+
+app.put('/', (req, res) => {
+  res.send('this is the response in the / route of the put command')
+})
+
 app.get('/hello', (req, res) => {
   console.log("You're in the /hello route handler!")
   res.send('Howdy')
