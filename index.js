@@ -41,6 +41,10 @@ app.get('/hello', (req, res) => {
   res.send('Howdy')
 })
 
+app.get('*', (req, res) => {
+  res.send('404 Not Found')
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`)
 })
