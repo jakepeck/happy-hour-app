@@ -21,7 +21,17 @@ const createHappyHourDeal = async (req, res) => {
   }
 }
 
+const getAllHappyHours = async (req, res) => {
+  try {
+    const happyHours = await HappyHour.find({})
+    return res.status(200).json({ happyHours })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createHappyHour,
-  createHappyHourDeal
+  createHappyHourDeal,
+  getAllHappyHours
 }

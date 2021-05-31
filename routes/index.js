@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const router = Router()
+const controllers = require('../controllers')
 
 router.get('/', (req, res) => {
   console.log(`Welcome to the home directory`)
@@ -9,6 +10,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   res.send('this is the response in the / route of the post command')
 })
+
+router.post('/happyHours', controllers.createHappyHour)
+
+router.get('/happyHours', controllers.getAllHappyHours)
 
 router.delete('/', (req, res) => {
   res.send('this is the response in the / route of the delete command')
