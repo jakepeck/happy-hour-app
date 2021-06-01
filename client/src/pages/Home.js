@@ -6,14 +6,14 @@ export default class Home extends Component {
     return (
       <div>
         <div>
+          <h1>Welcome back to the Happy Hour Database</h1>
+        </div>
+        <div>
           <img
             style={{ display: 'block', maxWidth: '100%' }}
             src="https://i.imgur.com/0UlDmAu.png"
             alt="logo"
           />
-        </div>
-        <div>
-          <h1>Welcome back to the Happy Hour Database</h1>
         </div>
       </div>
     )

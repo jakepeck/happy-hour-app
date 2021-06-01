@@ -17,6 +17,8 @@ router.get('/happyhours', controllers.getAllHappyHours)
 
 router.get('/happyhours/:id', controllers.getHappyHourById)
 
+router.delete('/happyhours/:id', controllers.deleteHappyHour)
+
 router.delete('/', (req, res) => {
   res.send('this is the response in the / route of the delete command')
 })

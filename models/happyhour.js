@@ -4,7 +4,8 @@ const HappyHour = new Schema(
   {
     name: { type: String, required: true },
     location: { type: String, required: true },
-    deals: { type: Array, required: false }
+    image: { type: String, required: false },
+    deals: [{ type: Schema.Types.ObjectId, ref: 'happyhourdeals' }]
   },
   { timestamps: true }
 )

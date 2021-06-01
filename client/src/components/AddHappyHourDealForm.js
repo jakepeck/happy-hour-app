@@ -43,7 +43,7 @@ export default class AddHappyHourDealForm extends Component {
             name="newHappyHourDeal"
           ></input>
 
-          {/* <input
+          <input
             type="time"
             step="3600"
             placeholder="start time:"
@@ -57,7 +57,7 @@ export default class AddHappyHourDealForm extends Component {
             placeholder="end time:"
             onClick={(e) => this.handleChange(e)}
             value={this.state.endTime}
-          ></input> */}
+          ></input>
 
           {/* <input type="checkbox" name="sunday">
             Sun
