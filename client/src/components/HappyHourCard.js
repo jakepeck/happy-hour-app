@@ -6,7 +6,9 @@ export default class HappyHourCard extends Component {
     super(props)
     this.state = {
       happyhourdealsArray: props.happyhourdeals,
-      newDeal: ''
+      newDeal: '',
+      location: '',
+      name: ''
     }
   }
 
@@ -28,15 +30,35 @@ export default class HappyHourCard extends Component {
 
   render() {
     console.log(props)
+    let happyHourDeals = this.state.happyhourdealsArray.map((hhd, idx) => {
+      return (
+        <HappyHourDeal
+          key={idx}
+          description={hhd.description}
+          startTime={hhd.startTime}
+          endTime={hhd.endTime}
+        />
+      )
+    })
     // const { happyHour } = this.props
     return (
       <div>
-        Happy Hour Card
-        <HappyHourDeal
-          description={this.props.description}
-          startTime={this.props.startTime}
-          endTime={this.props.endTime}
-        />
+        Happy Hour Card: {this.props.name}
+        <ul>{happyHourDeals}</ul>
+        <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
+          Clear happy hour list
+        </button>
+        <form>
+          <input
+            type="text"
+            placeholder="Type a new deal here"
+            onChange={(e) => this.newDealChange(e)}
+            value={this.state.newDeal}
+          />
+          <button onClick={(e) => this.addDealToHappyHourCard(e)}>
+            Add new deal!
+          </button>
+        </form>
       </div>
     )
   }
