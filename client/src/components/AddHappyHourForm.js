@@ -26,12 +26,14 @@ export default class AddHappyHourForm extends Component {
             placeholder="Name of happy hour establishment"
             onChange={(e) => this.handleChange(e)}
             value={this.state.nameInput}
+            name="nameInput"
           ></input>
           <input
             type="text"
             placeholder="Location/address"
             onChange={(e) => this.handleChange(e)}
             value={this.state.locationInput}
+            name="locationInput"
           ></input>
           {/* <input type="time" step="3600" placeholder="start time:"></input> */}
         </form>
