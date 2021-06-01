@@ -5,11 +5,15 @@ export default class HappyHourCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      happyhourdealsArray: [],
+      happyhourdealsArray: props.deals,
       newDeal: '',
       location: '',
       name: ''
     }
+  }
+
+  newDealChange(e) {
+    this.setState({ newDeal: e.target.value })
   }
 
   addDealToHappyHourCard(e) {
@@ -23,6 +27,7 @@ export default class HappyHourCard extends Component {
 
   clearHappyHourCardDeals(e) {
     console.log('Deleting all happy hour deals on a happy hour card')
+    this.props.happyhour.deals = []
     this.setState({
       happyhourdealsArray: []
     })
@@ -44,11 +49,11 @@ export default class HappyHourCard extends Component {
 
     return (
       <div>
-        Happy Hour Card: {happyhour.name}
+        Happy Hour Card: <br></br> {happyhour.name} <br></br>
         {happyhour.location}
         <ul>{happyHourDeals}</ul>
         <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
-          Clear happy hour list
+          Clear deals
         </button>
         <form>
           <input
@@ -57,10 +62,12 @@ export default class HappyHourCard extends Component {
             onChange={(e) => this.newDealChange(e)}
             value={this.state.newDeal}
           />
+          <br></br>
           <button onClick={(e) => this.addDealToHappyHourCard(e)}>
             Add new deal!
           </button>
         </form>
+        <br></br>
       </div>
     )
   }

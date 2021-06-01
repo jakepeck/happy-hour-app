@@ -18,6 +18,10 @@ export default class App extends Component {
     }
   }
 
+  clearAllHappyHours() {
+    this.setState({ happyhours: [] })
+  }
+
   async componentDidMount() {
     console.log(this.state)
     console.log('component did mount called')

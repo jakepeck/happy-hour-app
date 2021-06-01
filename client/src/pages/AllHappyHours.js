@@ -13,6 +13,10 @@ export default class AllHappyHours extends Component {
     return (
       <div>
         <h1>All Happy Hours Page</h1>
+        <button>Add New Happy Hour</button>
+        <br></br>
+        <br></br>
+
         <div>{allhappyhours}</div>
         {/* <HappyHourCard /> */}
       </div>
