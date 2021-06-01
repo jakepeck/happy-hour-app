@@ -6,7 +6,9 @@ export default class HappyHourDeal extends Component {
     const { description, startTime, endTime } = this.props
     return (
       <div>
-        <li>Happy Hour Deal</li>
+        <li>
+          {description} {startTime} - {endTime}
+        </li>
       </div>
     )
   }
