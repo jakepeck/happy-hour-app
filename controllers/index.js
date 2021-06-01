@@ -86,5 +86,6 @@ module.exports = {
   createHappyHourDeal,
   getAllHappyHours,
   deleteHappyHour,
-  updateHappyHour
+  updateHappyHour,
+  getHappyHourById
 }

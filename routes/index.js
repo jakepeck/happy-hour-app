@@ -11,9 +11,9 @@ router.post('/', (req, res) => {
   res.send('this is the response in the / route of the post command')
 })
 
-router.post('/happyHours', controllers.createHappyHour)
+router.post('/happyhours', controllers.createHappyHour)
 
-router.get('/happyHours', controllers.getAllHappyHours)
+router.get('/happyhours', controllers.getAllHappyHours)
 
 router.delete('/', (req, res) => {
   res.send('this is the response in the / route of the delete command')
