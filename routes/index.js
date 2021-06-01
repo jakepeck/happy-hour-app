@@ -11,11 +11,13 @@ router.post('/', (req, res) => {
   res.send('this is the response in the / route of the post command')
 })
 
-router.post('/happyhours', controllers.createHappyHour)
-
 router.get('/happyhours', controllers.getAllHappyHours)
 
+router.post('/happyhours', controllers.createHappyHour)
+
 router.get('/happyhours/:id', controllers.getHappyHourById)
+
+router.post('/happyhours/:id', controllers.addDealByHappyHourId)
 
 router.delete('/happyhours/:id', controllers.deleteHappyHour)
 
@@ -37,11 +39,6 @@ router.get(
     res.send('response completed to middleware')
   }
 )
-
-router.get('/hello', (req, res) => {
-  console.log("You're in the /hello route handler!")
-  res.send('Howdy')
-})
 
 router.get('*', (req, res) => {
   res.send('404 Not Found')

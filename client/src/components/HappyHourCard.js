@@ -9,46 +9,46 @@ export default class HappyHourCard extends Component {
     }
   }
 
-  newDealChange(e) {
-    this.setState({ newDeal: e.target.value })
-  }
+  // newDealChange(e) {
+  //   this.setState({ newDeal: e.target.value })
+  // }
 
-  addDealToHappyHourCard(e) {
-    e.preventDefault()
-    const myArr = this.state.happyhourdealsArray
-    console.log(myArr)
-    console.log(this.state.newDeal)
-    myArr.push(this.state.newDeal)
-    this.setState({ happyhourdealsArray: myArr })
-  }
+  // addDealToHappyHourCard(e) {
+  //   e.preventDefault()
+  //   const myArr = this.state.happyhourdealsArray
+  //   console.log(myArr)
+  //   console.log(this.state.newDeal)
+  //   myArr.push(this.state.newDeal)
+  //   this.setState({ happyhourdealsArray: myArr })
+  // }
 
-  clearHappyHourCardDeals(e) {
-    console.log('Deleting all happy hour deals on a happy hour card')
-    this.props.happyhour.deals = []
-    this.setState({
-      happyhourdealsArray: []
-    })
-  }
+  // clearHappyHourCardDeals(e) {
+  //   console.log('Deleting all happy hour deals on a happy hour card')
+  //   this.props.happyhour.deals = []
+  //   this.setState({
+  //     happyhourdealsArray: []
+  //   })
+  // }
 
   render() {
     console.log(this)
     const { happyhour } = this.props
-    let happyHourDeals = happyhour.deals.map((hhd, idx) => {
-      return (
-        <HappyHourDeal
-          key={idx}
-          description={hhd.description}
-          startTime={hhd.startTime}
-          endTime={hhd.endTime}
-        />
-      )
-    })
+    // let happyHourDeals = happyhour.deals.map((hhd, idx) => {
+    //   return (
+    //     // <HappyHourDeal
+    //     //   key={idx}
+    //     //   description={hhd.description}
+    //     //   startTime={hhd.startTime}
+    //     //   endTime={hhd.endTime}
+    //     // />
+    //   // )
+    // })
 
     return (
       <div>
         <br></br>Happy Hour at {happyhour.name} <br></br>
         {happyhour.location}
-        <ul>{happyHourDeals}</ul>
+        {/* <ul>{happyHourDeals}</ul> */}
         {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals
         </button>

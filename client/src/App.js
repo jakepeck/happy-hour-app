@@ -32,12 +32,23 @@ export default class App extends Component {
     })
   }
 
+  async createHappyHour() {
+    const res = await axios.post(`${BASE_URL}/happyhours`)
+    console.log(res)
+    this.setState({})
+  }
+
+  async createHappyHourDeal() {
+    const res = await axios.post(`${BASE_URL}/happyhours`)
+    console.log(res)
+  }
+
   async componentDidMount() {
-    console.log(this.state)
-    console.log('component did mount called')
+    // console.log(this.state)
+    // console.log('component did mount called')
     const res = await axios.get(`${BASE_URL}/happyhours`)
-    console.log(res.data)
-    console.log('changing state to res.data.happyhours')
+    // console.log(res.data)
+    // console.log('changing state to res.data.happyhours')
     this.setState({ happyhours: res.data.happyhours })
     console.log(this.state)
   }
