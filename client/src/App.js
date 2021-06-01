@@ -19,13 +19,13 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    console.log('componetn did mount called')
-    console.log(this.state.happyhours)
+    console.log(this.state)
+    console.log('component did mount called')
     const res = await axios.get(`${BASE_URL}/happyhours`)
     console.log(res.data)
-    console.log(res.data.happyhours)
+    console.log('changing state to res.data.happyhours')
     this.setState({ happyhours: res.data.happyhours })
-    console.log(this.state.happyhours)
+    console.log(this.state)
   }
 
   render() {
@@ -40,8 +40,9 @@ export default class App extends Component {
             <Route
               exact
               path="/allhappyhours"
-              component={AllHappyHours}
-              happyhours={this.state.happyhours}
+              component={(props) => (
+                <AllHappyHours {...props} happyhours={this.state.happyhours} />
+              )}
             />
           </Switch>
         </main>

@@ -4,9 +4,9 @@ const { HappyHour, HappyHourDeal } = require('../models')
 
 const createHappyHour = async (req, res) => {
   try {
-    const happyHour = await new HappyHour(req.body)
-    await happyHour.save()
-    return res.status(201).json({ happyHour })
+    const happyhour = await new HappyHour(req.body)
+    await happyhour.save()
+    return res.status(201).json({ happyhour })
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
@@ -14,9 +14,9 @@ const createHappyHour = async (req, res) => {
 
 const createHappyHourDeal = async (req, res) => {
   try {
-    const happyHourDeal = await new HappyHourDeal(req.body)
-    await happyHourDeal.save()
-    return res.status(201).json({ happyHourDeal })
+    const happyhourdeal = await new HappyHourDeal(req.body)
+    await happyhourdeal.save()
+    return res.status(201).json({ happyhourDeal })
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
@@ -24,8 +24,8 @@ const createHappyHourDeal = async (req, res) => {
 
 const getAllHappyHours = async (req, res) => {
   try {
-    const happyHours = await HappyHour.find()
-    return res.status(200).json({ happyHours })
+    const happyhours = await HappyHour.find()
+    return res.status(200).json({ happyhours })
   } catch (error) {
     return res.status(500).send(error.message)
   }

@@ -5,7 +5,7 @@ export default class HappyHourCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      happyhourdealsArray: props.happyhourdeals,
+      happyhourdealsArray: [],
       newDeal: '',
       location: '',
       name: ''
@@ -29,8 +29,9 @@ export default class HappyHourCard extends Component {
   }
 
   render() {
-    console.log(props)
-    let happyHourDeals = this.state.happyhourdealsArray.map((hhd, idx) => {
+    console.log(this)
+    const { happyhour } = this.props
+    let happyHourDeals = happyhour.deals.map((hhd, idx) => {
       return (
         <HappyHourDeal
           key={idx}
@@ -40,10 +41,11 @@ export default class HappyHourCard extends Component {
         />
       )
     })
-    // const { happyHour } = this.props
+
     return (
       <div>
-        Happy Hour Card: {this.props.name}
+        Happy Hour Card: {happyhour.name}
+        {happyhour.location}
         <ul>{happyHourDeals}</ul>
         <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear happy hour list

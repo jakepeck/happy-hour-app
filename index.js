@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 //   res.send('404 Not Found')
 // })
 
-app.use('/', routes)
+app.use('/api', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
