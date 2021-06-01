@@ -10,6 +10,22 @@ export default class HappyHourCard extends Component {
     }
   }
 
+  addDealToHappyHourCard(e) {
+    e.preventDefault()
+    const myArr = this.state.happyhourdealsArray
+    console.log(myArr)
+    console.log(this.state.newDeal)
+    myArr.push(this.state.newDeal)
+    this.setState({ happyhourdealsArray: myArr })
+  }
+
+  clearHappyHourCardDeals(e) {
+    console.log('Deleting all happy hour deals on a happy hour card')
+    this.setState({
+      happyhourdealsArray: []
+    })
+  }
+
   render() {
     console.log(props)
     // const { happyHour } = this.props
