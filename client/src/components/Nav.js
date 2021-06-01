@@ -8,7 +8,7 @@ export default class Nav extends Component {
         <div>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/activetoday">Today</NavLink>
-          <NavLink to="/happyhours">Happy Hours</NavLink>
+          <NavLink to="/allhappyhours">All Happy Hours</NavLink>
         </div>
       </nav>
     )
