@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class AllHappyHours extends Components {
+export default class AllHappyHours extends Component {
   render() {
     return (
       <div>
