@@ -9,6 +9,7 @@ export default class Nav extends Component {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/activetoday">Today</NavLink>
           <NavLink to="/allhappyhours">All Happy Hours</NavLink>
+          <NavLink to="/addhappyhour">Add Happy Hour</NavLink>
         </div>
       </nav>
     )

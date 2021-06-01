@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import AllHappyHours from './pages/AllHappyHours'
 import axios from 'axios'
 import { BASE_URL } from './globals'
+import AddHappyHour from './pages/AddHappyHour'
 
 export default class App extends Component {
   constructor(props) {
@@ -62,6 +63,7 @@ export default class App extends Component {
                 />
               )}
             />
+            <Route path="/addhappyhour" component={AddHappyHour} />
           </Switch>
         </main>
       </div>

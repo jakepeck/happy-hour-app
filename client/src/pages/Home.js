@@ -14,7 +14,6 @@ export default class Home extends Component {
         </div>
         <div>
           <h1>Welcome back to the Happy Hour Database</h1>
-          <HappyHourCard />
         </div>
       </div>
     )

@@ -12,7 +12,7 @@ export default class AddHappyHourForm extends Component {
   handleChange(e) {
     const target = e.target
     const name = e.target.name
-    this.setState({ [name]: value })
+    this.setState({ [name]: target.value })
   }
 
   render() {

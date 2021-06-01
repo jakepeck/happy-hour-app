@@ -5,10 +5,7 @@ export default class HappyHourCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      happyhourdealsArray: props.deals,
-      newDeal: '',
-      location: '',
-      name: ''
+      happyhourdealsArray: props.deals
     }
   }
 
@@ -49,10 +46,10 @@ export default class HappyHourCard extends Component {
 
     return (
       <div>
-        Happy Hour Card: <br></br> {happyhour.name} <br></br>
+        <br></br>Happy Hour at {happyhour.name} <br></br>
         {happyhour.location}
         <ul>{happyHourDeals}</ul>
-        <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
+        {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals
         </button>
         <form>
@@ -66,7 +63,7 @@ export default class HappyHourCard extends Component {
           <button onClick={(e) => this.addDealToHappyHourCard(e)}>
             Add new deal!
           </button>
-        </form>
+        </form> */}
         <br></br>
       </div>
     )

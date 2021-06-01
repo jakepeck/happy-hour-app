@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import HappyHourCard from '../components/HappyHourCard'
+import AddHappyHourForm from '../components/AddHappyHourForm'
+import AddHappyHourDealForm from '../components/AddHappyHourDealForm'
 
 export default class AllHappyHours extends Component {
   render() {
@@ -13,15 +15,7 @@ export default class AllHappyHours extends Component {
     return (
       <div>
         <h1>All Happy Hours Page</h1>
-        <button>Add New Happy Hour</button>
-        <button onClick={() => this.props.clearAllHappyHours}>
-          Clear All Happy Hours
-        </button>
-        <br></br>
-        <br></br>
-
-        <div>{allhappyhours}</div>
-        {/* <HappyHourCard /> */}
+        <div className="allHappyHours">{allhappyhours}</div>
       </div>
     )
   }
