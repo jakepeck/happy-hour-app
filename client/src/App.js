@@ -19,7 +19,16 @@ export default class App extends Component {
   }
 
   clearAllHappyHours() {
+    console.log('calling clear all happy horus')
     this.setState({ happyhours: [] })
+  }
+
+  clearHappyHourCards(e) {
+    console.log('Deleting all happy hour deals on a happy hour card')
+    this.props.happyhour.deals = []
+    this.setState({
+      happyhourdealsArray: []
+    })
   }
 
   async componentDidMount() {
@@ -45,7 +54,12 @@ export default class App extends Component {
               exact
               path="/allhappyhours"
               component={(props) => (
-                <AllHappyHours {...props} happyhours={this.state.happyhours} />
+                <AllHappyHours
+                  {...props}
+                  happyhours={this.state.happyhours}
+                  clearAllHappyHours={this.clearAllHappyHours}
+                  clearHappyHourCards={this.clearHappyHourCards}
+                />
               )}
             />
           </Switch>

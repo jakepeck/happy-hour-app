@@ -14,6 +14,9 @@ export default class AllHappyHours extends Component {
       <div>
         <h1>All Happy Hours Page</h1>
         <button>Add New Happy Hour</button>
+        <button onClick={() => this.props.clearAllHappyHours}>
+          Clear All Happy Hours
+        </button>
         <br></br>
         <br></br>
 
