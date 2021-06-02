@@ -20,7 +20,7 @@ export default class AddHappyHour extends Component {
           createHappyHour={this.props.createHappyHour}
           createHappyHour2={this.props.createHappyHour2}
         />
-        <AddHappyHourDealForm />
+        {/* <AddHappyHourDealForm /> */}
       </div>
     )
   }

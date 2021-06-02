@@ -34,8 +34,8 @@ export default class AddHappyHourForm extends Component {
     console.log(this.props)
     return (
       <div>
-        Add a New Happy Hour!
-        <form>
+        {/* Add a New Happy Hour! */}
+        <form className="happyHourForm">
           Name of establishment:
           <input
             type="text"
@@ -60,9 +60,9 @@ export default class AddHappyHourForm extends Component {
             value={this.state.imageInput}
             name="imageInput"
           ></input>
-          <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
           {/* <input type="time" step="3600" placeholder="start time:"></input> */}
         </form>
+        <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
       </div>
     )
   }

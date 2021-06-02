@@ -12,6 +12,12 @@ label {
   float: left;
 }
 
+.happyHourForm {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
 .navbar {
   justify-content: space-between;
   align-items: center;
@@ -33,13 +39,15 @@ label {
 form {
   background-color: white;
   padding: 1em;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 20em;
+  width: 35em;
   min-height: 10em;
-  margin: 2em auto;
+  margin: 1em auto;
   border-radius: 0.25em;
 }
 
@@ -93,7 +101,7 @@ button {
   font-family: 'Georgia';
   font-weight: bold;
   cursor: pointer;
-  margin-top: 1em;
+  margin: 1em auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
