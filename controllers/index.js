@@ -12,6 +12,15 @@ const createHappyHour = async (req, res) => {
   }
 }
 
+const getAllHappyHourDeals = async (req, res) => {
+  try {
+    const happyhourdeals = await HappyHourDeal.find()
+    return res.status(200).json({ happyhourdeals })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const CreateHappyHourDeal = async (req, res) => {
   console.log(`creating a new model for happy hour deal`)
   //Create the new model
@@ -61,6 +70,19 @@ const deleteHappyHour = async (req, res) => {
       return res.status(200).send('Happy hour deleted')
     }
     throw new Error('Happy hour not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteHappyHourDeal = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await HappyHourDeal.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Happy hour deal deleted')
+    }
+    throw new Error('Happy hour deal not found')
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -146,5 +168,6 @@ module.exports = {
   updateHappyHour,
   getHappyHourById,
   addDealByHappyHourId,
-  CreateHappyHourDeal
+  CreateHappyHourDeal,
+  getAllHappyHourDeals
 }

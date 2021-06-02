@@ -45,12 +45,12 @@ export default class App extends Component {
 
   async componentDidMount() {
     // console.log(this.state)
-    // console.log('component did mount called')
+    console.log('component did mount called')
     const res = await axios.get(`${BASE_URL}/happyhours/all`)
     console.log(res.data)
-    // console.log('changing state to res.data.happyhours')
+    console.log('changing state to res.data.happyhours')
     this.setState({ happyhours: res.data.happyhours })
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   render() {

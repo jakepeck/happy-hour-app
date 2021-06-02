@@ -4,17 +4,21 @@ const controllers = require('../controllers')
 
 router.get('/happyhours/all', controllers.getAllHappyHours)
 
-router.post('/happyhours/add/:id', controllers.CreateHappyHourDeal)
-
-router.post('/happyhours/:id/adddeal', controllers.CreateHappyHourDeal)
+router.get('/deals/all', controllers.getAllHappyHourDeals)
 
 router.get('/happyhours/:id', controllers.getHappyHourById)
 
 router.get('/deals/:id', controllers.getHappyHourDealById)
 
+router.post('/happyhours/add/:id', controllers.CreateHappyHourDeal)
+
+router.post('/happyhours/:id/adddeal', controllers.CreateHappyHourDeal)
+
 router.post('/happyhours/:id', controllers.addDealByHappyHourId)
 
 router.delete('/happyhours/:id', controllers.deleteHappyHour)
+
+router.delete('/deals/:id', controllers.deleteHappyHourDeal)
 
 router.post('/happyhours', controllers.createHappyHour)
 
