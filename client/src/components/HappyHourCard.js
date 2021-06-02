@@ -48,13 +48,13 @@ export default class HappyHourCard extends Component {
   }
 
   componentDidMount() {
-    console.log('HappyHourCard component mounted')
-    console.log(this.props)
+    // console.log('HappyHourCard component mounted')
+    // console.log(this.props)
   }
 
   render() {
-    console.log('rendernig happy hour card')
-    console.log(this.props)
+    // console.log('rendernig happy hour card')
+    // console.log(this.props)
     // console.log(`All happy hour deals in HappyHourCard component`)
     // console.log(this.props.happyhourdeals)
     // console.log(`Happy hour deals in HappyHourCard component`)
@@ -70,8 +70,8 @@ export default class HappyHourCard extends Component {
       }
     }
 
-    console.log('Array to map is:')
-    console.log(arrToMap)
+    // console.log('Array to map is:')
+    // console.log(arrToMap)
 
     let happyHourDeals = arrToMap.map((hhd, idx) => {
       return (
@@ -88,7 +88,7 @@ export default class HappyHourCard extends Component {
 
     return (
       <div className="allHappyHoursDisplayCard">
-        <button happyHour_Id={happyhour._id} onClick={this.removeHappyHour}>
+        <button happyhour_id={happyhour._id} onClick={this.removeHappyHour}>
           Remove {`${happyhour.name}`}
         </button>{' '}
         <br />
@@ -99,7 +99,7 @@ export default class HappyHourCard extends Component {
         <div className="dealsList">
           {happyHourDeals}
           <button
-            happyHour_Id={happyhour._id}
+            happyhour_id={happyhour._id}
             onClick={this.addDealToHappyHourCard}
           >
             Add New Deal to {happyhour.name}

@@ -19,18 +19,36 @@ export default class App extends Component {
     }
   }
 
-  clearAllHappyHours() {
+  deleteAllHappyHours = async () => {
     // console.log('calling clear all happy horus')
+    for (let i = 0; i < this.state.happyhours.length; i++) {
+      this.deleteHappyHourHelper(this.state.happyhours[i]._id)
+    }
     this.setState({ happyhours: [] })
   }
 
-  async deleteHappyHourHelper(id) {
+  deleteHappyHourHelper = async (id) => {
     console.log('deleteHappyHourHelper called')
+    console.log(this.state)
+    for (let i = 0; i < this.state.happyhourdeals.length; i++) {
+      if (this.happyhourdeals[i].happyHour_id === id) {
+        this.deleteHappyHourDealHelper(this.happyhourdeals[i]._id)
+      }
+    }
+    let myUpdatedHappyHours = []
+    // for (let i = 0; i < this.happyhours.length; i++) {
+    //   if (this.state.happyhours[i] === id) {
+    //   } else {
+    //     myUpdatedHappyHours.push(this.state.happyhours[i])
+    //   }
+    // }
     const res = await axios.delete(`${BASE_URL}/happyhours/${id}`)
     console.log(res)
+    // console.log(this)
+    // this.setState({ happyhours: myUpdatedHappyHours })
   }
 
-  async deleteHappyHourDealHelper(id) {
+  deleteHappyHourDealHelper = async (id) => {
     console.log('deleteHappyHourDealHelper called')
     const res = await axios.delete(`${BASE_URL}/deals/${id}`)
     console.log(res)
@@ -45,7 +63,7 @@ export default class App extends Component {
   // }
   async addNewDealToHappyHour(formData) {}
 
-  async createHappyHour2(formData) {
+  createHappyHour2 = async (formData) => {
     console.log('create happy hour 2 called')
     const res = await axios.post(`${BASE_URL}/happyhours/all`, formData)
     console.log(res)
@@ -77,7 +95,7 @@ export default class App extends Component {
     // console.log(`res2 is`)
     // console.log(res2.data)
     this.setState({ happyhourdeals: res2.data.happyhourdeals })
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   render() {
