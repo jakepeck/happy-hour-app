@@ -53,7 +53,7 @@ export default class AddHappyHourDealForm extends Component {
             type="time"
             step="3600"
             placeholder="end time:"
-            onClick={(e) => this.handleInputChange(e)}
+            onChange={(e) => this.handleInputChange(e)}
             value={this.state.endTime}
           ></input>
 

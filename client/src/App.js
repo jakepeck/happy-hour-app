@@ -32,12 +32,19 @@ export default class App extends Component {
   //   })
   // }
 
-  // async createHappyHour() {
-  //   const res = await axios.post(`${BASE_URL}/happyhours`)
-  //   // console.log(res)
-  //   this.setState({})
-  // }
+  async createHappyHour2() {
+    console.log('create happy hour called')
+    const res = await axios.post(`${BASE_URL}/happyhours/all`)
+    console.log(res)
+    // this.setState({happyhours: [...happyhours, res.data]})
+  }
 
+  createHappyHour = async () => {
+    console.log('create happy hour called')
+    const res = await axios.post(`${BASE_URL}/happyhours/all`)
+    console.log(res)
+    // this.setState({happyhours: [...happyhours, res.data]})
+  }
   // async createHappyHourDeal() {
   //   const res = await axios.post(`${BASE_URL}/happyhours/deals`)
   //   // console.log(res)
@@ -80,7 +87,16 @@ export default class App extends Component {
                 />
               )}
             />
-            <Route path="/addhappyhour" component={AddHappyHour} />
+            <Route
+              path="/addhappyhour"
+              component={(props) => (
+                <AddHappyHour
+                  {...props}
+                  createHappyHour={this.createHappyHour}
+                  createHappyHour2={this.createHappyHour2}
+                />
+              )}
+            />
           </Switch>
         </main>
       </div>

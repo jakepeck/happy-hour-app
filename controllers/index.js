@@ -4,6 +4,8 @@ const { HappyHour, HappyHourDeal } = require('../models')
 
 const createHappyHour = async (req, res) => {
   try {
+    console.log('createHappyHour called')
+    console.log(res.body)
     const happyhour = await new HappyHour(req.body)
     await happyhour.save()
     return res.status(201).json({ happyhour })

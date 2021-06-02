@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+label {
+  text-align: left;
+  float: left;
+}
+
 .navbar {
   justify-content: space-between;
   align-items: center;

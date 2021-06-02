@@ -20,7 +20,7 @@ router.delete('/happyhours/:id', controllers.deleteHappyHour)
 
 router.delete('/deals/:id', controllers.deleteHappyHourDeal)
 
-router.post('/happyhours', controllers.createHappyHour)
+router.post('/happyhours/all', controllers.createHappyHour)
 
 router.get('/', (req, res) => {
   console.log(`Welcome to the home directory`)
