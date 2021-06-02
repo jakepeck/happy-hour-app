@@ -31,6 +31,13 @@ export default class HappyHourCard extends Component {
   //   })
   // }
 
+  addDealToHappyHourCard(e) {
+    // console.log(e)
+    console.log(e.target.attributes[0].value)
+    e.preventDefault()
+    console.log('addDealToHappyHourCard being called')
+  }
+
   componentDidMount() {
     // console.log('HappyHourCard component mounted')
     // console.log(this.props)
@@ -69,12 +76,20 @@ export default class HappyHourCard extends Component {
     })
 
     return (
-      <div>
+      <div className="allHappyHoursDisplayCard">
         <img src={`${happyhour.image}`} alt="hhimage" width="300" />
         <br></br>
         {happyhour.name} <br></br>
         {happyhour.location}
-        <div className="dealsList">{happyHourDeals}</div>
+        <div className="dealsList">
+          {happyHourDeals}
+          <button
+            happyHour_Id={happyhour._id}
+            onClick={this.addDealToHappyHourCard}
+          >
+            Add New Deal to {happyhour.name}
+          </button>
+        </div>
         {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals
         </button>
