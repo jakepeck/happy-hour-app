@@ -38,9 +38,18 @@ export default class HappyHourCard extends Component {
     console.log('addDealToHappyHourCard being called')
   }
 
+  removeHappyHour = async (e) => {
+    // e.preventDefault()
+    console.log(e.target.attributes[0].value)
+    console.log(
+      `Trying to remove happy hour with id of: ${e.target.attributes[0].value}`
+    )
+    this.props.deleteHappyHourHelper(e.target.attributes[0].value)
+  }
+
   componentDidMount() {
-    // console.log('HappyHourCard component mounted')
-    // console.log(this.props)
+    console.log('HappyHourCard component mounted')
+    console.log(this.props)
   }
 
   render() {
@@ -77,6 +86,10 @@ export default class HappyHourCard extends Component {
 
     return (
       <div className="allHappyHoursDisplayCard">
+        <button happyHour_Id={happyhour._id} onClick={this.removeHappyHour}>
+          Remove {`${happyhour.name}`}
+        </button>{' '}
+        <br />
         <img src={`${happyhour.image}`} alt="hhimage" width="300" />
         <br></br>
         {happyhour.name} <br></br>

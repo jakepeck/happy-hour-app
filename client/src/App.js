@@ -24,6 +24,12 @@ export default class App extends Component {
     this.setState({ happyhours: [] })
   }
 
+  async deleteHappyHourHelper(id) {
+    console.log('deleteHappyHourHelper called')
+    const res = await axios.delete(`${BASE_URL}/happyhours/${id}`)
+    console.log(res)
+  }
+
   // clearHappyHourCards(e) {
   //   // console.log('Deleting all happy hour deals on a happy hour card')
   //   this.props.happyhour.deals = []
@@ -31,9 +37,10 @@ export default class App extends Component {
   //     happyhourdealsArray: []
   //   })
   // }
+  async addNewDealToHappyHour(formData) {}
 
   async createHappyHour2(formData) {
-    console.log('create happy hour called')
+    console.log('create happy hour 2 called')
     const res = await axios.post(`${BASE_URL}/happyhours/all`, formData)
     console.log(res)
     // this.setState({happyhours: [...happyhours, res.data]})
@@ -84,6 +91,7 @@ export default class App extends Component {
                   {...props}
                   happyhours={this.state.happyhours}
                   happyhourdeals={this.state.happyhourdeals}
+                  deleteHappyHourHelper={this.deleteHappyHourHelper}
                 />
               )}
             />
