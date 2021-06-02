@@ -24,32 +24,39 @@ export default class App extends Component {
     this.setState({ happyhours: [] })
   }
 
-  clearHappyHourCards(e) {
-    // console.log('Deleting all happy hour deals on a happy hour card')
-    this.props.happyhour.deals = []
-    this.setState({
-      happyhourdealsArray: []
-    })
-  }
+  // clearHappyHourCards(e) {
+  //   // console.log('Deleting all happy hour deals on a happy hour card')
+  //   this.props.happyhour.deals = []
+  //   this.setState({
+  //     happyhourdealsArray: []
+  //   })
+  // }
 
-  async createHappyHour() {
-    const res = await axios.post(`${BASE_URL}/happyhours`)
-    // console.log(res)
-    this.setState({})
-  }
+  // async createHappyHour() {
+  //   const res = await axios.post(`${BASE_URL}/happyhours`)
+  //   // console.log(res)
+  //   this.setState({})
+  // }
 
-  async createHappyHourDeal() {
-    const res = await axios.post(`${BASE_URL}/happyhours/deals`)
-    // console.log(res)
-  }
+  // async createHappyHourDeal() {
+  //   const res = await axios.post(`${BASE_URL}/happyhours/deals`)
+  //   // console.log(res)
+  // }
 
   async componentDidMount() {
     // console.log(this.state)
-    console.log('component did mount called')
+    console.log('App.js component did mount called')
     const res = await axios.get(`${BASE_URL}/happyhours/all`)
-    console.log(res.data)
-    console.log('changing state to res.data.happyhours')
     this.setState({ happyhours: res.data.happyhours })
+    const res2 = await axios.get(`${BASE_URL}/deals/all`)
+    // console.log(res.data)
+    // console.log(res2.data)
+    // console.log('changing state to res.data.happyhours')
+    // console.log(this.state)
+    // console.log('changing state to hapyphourdeals')
+    console.log(`res2 is`)
+    console.log(res2.data)
+    this.setState({ happyhourdeals: res2.data.happyhourdeals })
     console.log(this.state)
   }
 
@@ -69,8 +76,7 @@ export default class App extends Component {
                 <AllHappyHours
                   {...props}
                   happyhours={this.state.happyhours}
-                  clearAllHappyHours={this.clearAllHappyHours}
-                  clearHappyHourCards={this.clearHappyHourCards}
+                  happyhourdeals={this.state.happyhourdeals}
                 />
               )}
             />

@@ -5,7 +5,8 @@ export default class HappyHourCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      happyhourdealsArray: props.deals
+      happyhours: props.happyhours,
+      happyhourdeals: props.happyhourdeals
     }
   }
 
@@ -30,25 +31,48 @@ export default class HappyHourCard extends Component {
   //   })
   // }
 
+  componentDidMount() {
+    console.log('HappyHourCard component mounted')
+    console.log(this.props)
+  }
+
   render() {
-    console.log(this)
+    console.log('rendernig happy hour card')
+    console.log(this.props)
+    console.log(`All happy hour deals in HappyHourCard component`)
+    console.log(this.props.happyhourdeals)
+    console.log(`Happy hour deals in HappyHourCard component`)
+    console.log(this.props.happyhour.happyhourdeals)
     const { happyhour } = this.props
-    // let happyHourDeals = happyhour.deals.map((hhd, idx) => {
-    //   return (
-    //     // <HappyHourDeal
-    //     //   key={idx}
-    //     //   description={hhd.description}
-    //     //   startTime={hhd.startTime}
-    //     //   endTime={hhd.endTime}
-    //     // />
-    //   // )
-    // })
+    let arrToMap = []
+
+    for (let i = 0; i < happyhour.happyhourdeals.length; i++) {
+      for (let j = 0; j < this.props.happyhourdeals.length; j++) {
+        if (happyhour.happyhourdeals[i] === this.props.happyhourdeals[j]._id) {
+          arrToMap.push(this.props.happyhourdeals[j])
+        }
+      }
+    }
+
+    console.log('Array to map is:')
+    console.log(arrToMap)
+
+    let happyHourDeals = arrToMap.map((hhd, idx) => {
+      return (
+        <HappyHourDeal
+          key={idx}
+          description={hhd.description}
+          startTime={hhd.startTime}
+          endTime={hhd.endTime}
+        />
+      )
+    })
 
     return (
       <div>
         <br></br>Happy Hour at {happyhour.name} <br></br>
         {happyhour.location}
-        {/* <ul>{happyHourDeals}</ul> */}
+        <ul>{happyHourDeals}</ul>
         {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals
         </button>
