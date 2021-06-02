@@ -10,9 +10,7 @@ export default class HappyHourDeal extends Component {
     const { description, startTime, endTime } = this.props
     return (
       <div>
-        <li>
-          {description} {startTime} - {endTime}
-        </li>
+        {description} {startTime} - {endTime}
       </div>
     )
   }

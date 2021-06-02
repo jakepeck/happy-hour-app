@@ -70,9 +70,11 @@ export default class HappyHourCard extends Component {
 
     return (
       <div>
-        <br></br>Happy Hour at {happyhour.name} <br></br>
+        <img src={`${happyhour.image}`} alt="hhimage" width="300" />
+        <br></br>
+        {happyhour.name} <br></br>
         {happyhour.location}
-        <ul>{happyHourDeals}</ul>
+        <div className="dealsList">{happyHourDeals}</div>
         {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals
         </button>
