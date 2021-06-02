@@ -30,6 +30,12 @@ export default class App extends Component {
     console.log(res)
   }
 
+  async deleteHappyHourDealHelper(id) {
+    console.log('deleteHappyHourDealHelper called')
+    const res = await axios.delete(`${BASE_URL}/deals/${id}`)
+    console.log(res)
+  }
+
   // clearHappyHourCards(e) {
   //   // console.log('Deleting all happy hour deals on a happy hour card')
   //   this.props.happyhour.deals = []
@@ -92,6 +98,7 @@ export default class App extends Component {
                   happyhours={this.state.happyhours}
                   happyhourdeals={this.state.happyhourdeals}
                   deleteHappyHourHelper={this.deleteHappyHourHelper}
+                  deleteHappyHourDealHelper={this.deleteHappyHourDealHelper}
                 />
               )}
             />

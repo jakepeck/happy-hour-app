@@ -53,8 +53,8 @@ export default class HappyHourCard extends Component {
   }
 
   render() {
-    // console.log('rendernig happy hour card')
-    // console.log(this.props)
+    console.log('rendernig happy hour card')
+    console.log(this.props)
     // console.log(`All happy hour deals in HappyHourCard component`)
     // console.log(this.props.happyhourdeals)
     // console.log(`Happy hour deals in HappyHourCard component`)
@@ -80,6 +80,8 @@ export default class HappyHourCard extends Component {
           description={hhd.description}
           startTime={hhd.startTime}
           endTime={hhd.endTime}
+          dealId={hhd._id}
+          deleteHappyHourDealHelper={this.props.deleteHappyHourDealHelper}
         />
       )
     })
