@@ -16,15 +16,21 @@ export default class AddHappyHourForm extends Component {
     this.setState({ [name]: target.value })
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
+    e.preventDefault()
     console.log('Form submit button clicked')
     console.log(e)
-    this.props.createHappyHour()
-    this.props.history.push('/allhappyhours')
+    let formData = {
+      name: this.state.nameInput,
+      location: this.state.locationInput,
+      image: this.state.imageInput
+    }
+    this.props.createHappyHour2(formData)
+    // this.props.history.push('/allhappyhours')
   }
 
   render() {
-    console.log('add happy hour form rendered')
+    console.log('add happy hour FORM rendered')
     console.log(this.props)
     return (
       <div>

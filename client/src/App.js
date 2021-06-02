@@ -32,9 +32,9 @@ export default class App extends Component {
   //   })
   // }
 
-  async createHappyHour2() {
+  async createHappyHour2(formData) {
     console.log('create happy hour called')
-    const res = await axios.post(`${BASE_URL}/happyhours/all`)
+    const res = await axios.post(`${BASE_URL}/happyhours/all`, formData)
     console.log(res)
     // this.setState({happyhours: [...happyhours, res.data]})
   }
@@ -61,10 +61,10 @@ export default class App extends Component {
     // console.log('changing state to res.data.happyhours')
     // console.log(this.state)
     // console.log('changing state to hapyphourdeals')
-    console.log(`res2 is`)
-    console.log(res2.data)
+    // console.log(`res2 is`)
+    // console.log(res2.data)
     this.setState({ happyhourdeals: res2.data.happyhourdeals })
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   render() {

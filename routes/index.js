@@ -2,6 +2,8 @@ const { Router } = require('express')
 const router = Router()
 const controllers = require('../controllers')
 
+router.post('/happyhours/all', controllers.createHappyHour)
+
 router.get('/happyhours/all', controllers.getAllHappyHours)
 
 router.get('/deals/all', controllers.getAllHappyHourDeals)
@@ -19,8 +21,6 @@ router.post('/happyhours/:id', controllers.addDealByHappyHourId)
 router.delete('/happyhours/:id', controllers.deleteHappyHour)
 
 router.delete('/deals/:id', controllers.deleteHappyHourDeal)
-
-router.post('/happyhours/all', controllers.createHappyHour)
 
 router.get('/', (req, res) => {
   console.log(`Welcome to the home directory`)
