@@ -7,11 +7,11 @@ export default class AddHappyHour extends Component {
     super(props)
   }
   render() {
-    console.log('Props for add happy hours page:')
-    console.log(this.props)
-    const { createHappyHour, createHappyHour2 } = this.props
-    console.log('showing functions here')
-    console.log(createHappyHour, createHappyHour2)
+    // console.log('Props for add happy hours page:')
+    // console.log(this.props)
+    // const { createHappyHour, createHappyHour2 } = this.props
+    // console.log('showing functions here')
+    // console.log(createHappyHour, createHappyHour2)
     return (
       <div>
         <h1>Add a Happy Hour Here</h1>

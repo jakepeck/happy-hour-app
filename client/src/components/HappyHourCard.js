@@ -32,17 +32,17 @@ export default class HappyHourCard extends Component {
   // }
 
   componentDidMount() {
-    console.log('HappyHourCard component mounted')
-    console.log(this.props)
+    // console.log('HappyHourCard component mounted')
+    // console.log(this.props)
   }
 
   render() {
-    console.log('rendernig happy hour card')
-    console.log(this.props)
-    console.log(`All happy hour deals in HappyHourCard component`)
-    console.log(this.props.happyhourdeals)
-    console.log(`Happy hour deals in HappyHourCard component`)
-    console.log(this.props.happyhour.happyhourdeals)
+    // console.log('rendernig happy hour card')
+    // console.log(this.props)
+    // console.log(`All happy hour deals in HappyHourCard component`)
+    // console.log(this.props.happyhourdeals)
+    // console.log(`Happy hour deals in HappyHourCard component`)
+    // console.log(this.props.happyhour.happyhourdeals)
     const { happyhour } = this.props
     let arrToMap = []
 
