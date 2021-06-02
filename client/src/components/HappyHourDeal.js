@@ -11,6 +11,7 @@ export default class HappyHourDeal extends Component {
     return (
       <div>
         {description} {startTime} - {endTime}
+        <button>Remove Deal</button>
       </div>
     )
   }
