@@ -75,9 +75,8 @@ export default class AddHappyHourDealForm extends Component {
               type="checkbox"
               checked={this.state.tuesday}
               onChange={(e) => this.handleInputChange(e)}
-            >
-              T
-            </input>
+            />
+
             <input
               name="wednesday"
               type="checkbox"
@@ -102,6 +101,9 @@ export default class AddHappyHourDealForm extends Component {
               checked={this.state.saturday}
               onChange={(e) => this.handleInputChange(e)}
             />
+          </div>
+          <div className="checkbox-Box">
+            <h4>Sun Mon Tue Wed Thu Fri Sat</h4>
           </div>
 
           {/* <input type="checkbox" name="sunday">

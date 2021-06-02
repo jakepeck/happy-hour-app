@@ -12,20 +12,36 @@ const createHappyHour = async (req, res) => {
   }
 }
 
-const createHappyHourDeal = async (req, res) => {
-  try {
-    const happyhour = await HappyHour.findOne()
-    const happyhourdeal = await new HappyHourDeal(req.body)
-    await happyhourdeal.save()
-    return HappyHour.findOneAndUpdate(
-      { _id: req.params.id },
-      { $push: { deals: res._id } }
-    )
-    console.log('updated post')
-    return res.status(201).json({ happyhourDeal })
-  } catch (error) {
-    return res.status(500).json({ error: error.message })
-  }
+const CreateHappyHourDeal = async (req, res) => {
+  console.log(`creating a new model for happy hour deal`)
+  //Create the new model
+  const happyHourDeal = new HappyHourDeal({
+    // grab necessary attributes out of req.body
+    description: req.body.description,
+    startTime: req.body.startTime,
+    endTime: req.body.endTime,
+    sunday: req.body.sunday,
+    monday: req.body.monday,
+    tuesday: req.body.tuesday,
+    wednesday: req.body.wednesday,
+    thursday: req.body.thursday,
+    friday: req.body.friday,
+    saturday: req.body.saturday,
+    happyHour_id: req.params.id
+  })
+  console.log('calling save on happyhourdeal')
+  happyHourDeal.save()
+  //Update the parent
+  console.log(`id is: ${req.params.id}`)
+  const happyHour = await HappyHour.updateOne(
+    { _id: req.params.id },
+    {
+      $push: {
+        happyhourdeals: happyHourDeal
+      }
+    }
+  )
+  res.send(happyHourDeal)
 }
 
 const getAllHappyHours = async (req, res) => {
@@ -87,14 +103,29 @@ const getHappyHourById = async (req, res) => {
   }
 }
 
+const getHappyHourDealById = async (req, res) => {
+  try {
+    const { id } = req.params
+    const happyhourdeal = await HappyHourDeal.findById(id)
+    if (happyhourdeal) {
+      return res.status(200).json({ happyhourdeal })
+    }
+    return res
+      .status(404)
+      .send('Happy hour deal with the specified ID does not exists')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const addDealByHappyHourId = async (req, res) => {
   try {
     const { id } = req.params
 
     const happyhourdeal = await new HappyHourDeal(req.body)
     await happyhourdeal.save()
-    console.log(happyhourdeal)
-    console.log(res._id)
+    // console.log(happyhourdeal)
+    // console.log(res._id)
     HappyHour.findOneAndUpdate({ _id: id }, { $push: { deals: res._id } })
     if (happyhourdeal) {
       return res.status(200).json({ happyhourdeal })
@@ -109,10 +140,11 @@ const addDealByHappyHourId = async (req, res) => {
 
 module.exports = {
   createHappyHour,
-  createHappyHourDeal,
+  getHappyHourDealById,
   getAllHappyHours,
   deleteHappyHour,
   updateHappyHour,
   getHappyHourById,
-  addDealByHappyHourId
+  addDealByHappyHourId,
+  CreateHappyHourDeal
 }

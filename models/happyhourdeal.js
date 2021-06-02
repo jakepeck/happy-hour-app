@@ -11,7 +11,8 @@ const HappyHourDeal = new Schema(
     wednesday: { type: Boolean, required: false },
     thursday: { type: Boolean, required: false },
     friday: { type: Boolean, required: false },
-    saturday: { type: Boolean, required: false }
+    saturday: { type: Boolean, required: false },
+    happyHour_id: { type: String, required: false }
   },
   { timestamps: true }
 )

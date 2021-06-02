@@ -20,12 +20,12 @@ export default class App extends Component {
   }
 
   clearAllHappyHours() {
-    console.log('calling clear all happy horus')
+    // console.log('calling clear all happy horus')
     this.setState({ happyhours: [] })
   }
 
   clearHappyHourCards(e) {
-    console.log('Deleting all happy hour deals on a happy hour card')
+    // console.log('Deleting all happy hour deals on a happy hour card')
     this.props.happyhour.deals = []
     this.setState({
       happyhourdealsArray: []
@@ -34,23 +34,23 @@ export default class App extends Component {
 
   async createHappyHour() {
     const res = await axios.post(`${BASE_URL}/happyhours`)
-    console.log(res)
+    // console.log(res)
     this.setState({})
   }
 
   async createHappyHourDeal() {
-    const res = await axios.post(`${BASE_URL}/happyhours`)
-    console.log(res)
+    const res = await axios.post(`${BASE_URL}/happyhours/deals`)
+    // console.log(res)
   }
 
   async componentDidMount() {
     // console.log(this.state)
     // console.log('component did mount called')
-    const res = await axios.get(`${BASE_URL}/happyhours`)
-    // console.log(res.data)
+    const res = await axios.get(`${BASE_URL}/happyhours/all`)
+    console.log(res.data)
     // console.log('changing state to res.data.happyhours')
     this.setState({ happyhours: res.data.happyhours })
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   render() {
