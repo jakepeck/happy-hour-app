@@ -1,6 +1,8 @@
 body {
   /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-image: linear-gradient(to bottom, #30cfd0 0%, #330867 100%);
+  min-height: 120vh;
+  height: 100vmax;
 }
 
 .App {
@@ -161,6 +163,7 @@ h2 {
 
 h1 {
   font-family: 'Georgia';
+  color: white;
 }
 
 h1,
