@@ -22,6 +22,10 @@ router.delete('/happyhours/:id', controllers.deleteHappyHour)
 
 router.delete('/deals/:id', controllers.deleteHappyHourDeal)
 
+router.post('/update/happyhours/:id', controllers.updateHappyHour)
+
+router.post('/update/deals/:id', controllers.updateHappyHourDeal)
+
 router.get('/', (req, res) => {
   res.send('this is the response in the / route')
 })

@@ -107,6 +107,28 @@ const updateHappyHour = async (req, res) => {
   }
 }
 
+const updateHappyHourDeal = async (req, res) => {
+  try {
+    const { id } = req.params
+    await HappyHourDeal.findByIdAndUpdate(
+      id,
+      req.body,
+      { new: true },
+      (err, happyhourdeal) => {
+        if (err) {
+          res.status(500).send(err)
+        }
+        if (!happyhourdeal) {
+          res.status(500).send('Happy hour deal not found!')
+        }
+        return res.status(200).json(happyhourdeal)
+      }
+    )
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getHappyHourById = async (req, res) => {
   try {
     const { id } = req.params
@@ -162,6 +184,7 @@ module.exports = {
   getAllHappyHours,
   deleteHappyHour,
   updateHappyHour,
+  updateHappyHourDeal,
   getHappyHourById,
   addDealByHappyHourId,
   CreateHappyHourDeal,
