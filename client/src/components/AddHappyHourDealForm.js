@@ -29,8 +29,6 @@ export default class AddHappyHourDealForm extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submit button clicked')
-    console.log(e)
     let formData = {
       description: this.state.description,
       startTime: this.state.startTime,
@@ -44,8 +42,6 @@ export default class AddHappyHourDealForm extends Component {
       saturday: this.state.saturday
     }
     this.props.createHappyHourDealHelper(this.props.happyhour_id, formData)
-    console.log(this.props)
-    // this.props.history.push('/allhappyhours')
   }
 
   render() {

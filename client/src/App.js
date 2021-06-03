@@ -20,7 +20,6 @@ export default class App extends Component {
   }
 
   deleteAllHappyHours = async () => {
-    // console.log('calling clear all happy horus')
     for (let i = 0; i < this.state.happyhours.length; i++) {
       this.deleteHappyHourHelper(this.state.happyhours[i]._id)
     }
@@ -28,69 +27,32 @@ export default class App extends Component {
   }
 
   deleteHappyHourHelper = async (id) => {
-    console.log('deleteHappyHourHelper called')
-    console.log(this.state)
     for (let i = 0; i < this.state.happyhourdeals.length; i++) {
       if (this.state.happyhourdeals[i].happyHour_Id === id) {
         this.deleteHappyHourDealHelper(this.state.happyhourdeals[i]._id)
       }
     }
-
-    // for (let i = 0; i < this.happyhours.length; i++) {
-    //   if (this.state.happyhours[i] === id) {
-    //   } else {
-    //     myUpdatedHappyHours.push(this.state.happyhours[i])
-    //   }
-    // }
     const res = await axios.delete(`${BASE_URL}/happyhours/${id}`)
-    console.log(res)
     this.updateState()
-    // console.log(this)
-    // this.setState({ happyhours: myUpdatedHappyHours })
   }
 
   deleteHappyHourDealHelper = async (id) => {
-    console.log('deleteHappyHourDealHelper called')
     const res = await axios.delete(`${BASE_URL}/deals/${id}`)
-    console.log(res)
     this.updateState()
   }
 
-  // clearHappyHourCards(e) {
-  //   // console.log('Deleting all happy hour deals on a happy hour card')
-  //   this.props.happyhour.deals = []
-  //   this.setState({
-  //     happyhourdealsArray: []
-  //   })
-  // }
-  async addNewDealToHappyHour(formData) {}
-
   createHappyHour2 = async (formData) => {
-    console.log('create happy hour 2 called')
     const res = await axios.post(`${BASE_URL}/happyhours/all`, formData)
-    console.log(res)
     this.updateState()
-    // console.log(this.props)
-    // this.props.history.push('/allhappyhours')
-    // this.setState({happyhours: [...happyhours, res.data]})
   }
 
   createHappyHour = async () => {
-    console.log('create happy hour called')
     const res = await axios.post(`${BASE_URL}/happyhours/all`)
-    console.log(res)
     this.updateState()
-    // this.setState({happyhours: [...happyhours, res.data]})
   }
-  // async createHappyHourDeal() {
-  //   const res = await axios.post(`${BASE_URL}/happyhours/deals`)
-  //   // console.log(res)
-  // }
 
   createHappyHourDealHelper = async (id, formData) => {
-    console.log(`create happy hour deal by id called on`, id, formData)
     const res = await axios.post(`${BASE_URL}/happyhours/add/${id}`, formData)
-    console.log(res)
     this.updateState()
   }
 
