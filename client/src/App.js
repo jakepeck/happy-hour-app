@@ -58,7 +58,10 @@ export default class App extends Component {
 
   updateHappyHourHelper = async (id, formData) => {
     console.log('updateHappyHourHelper called')
-    const res = await axios.post(`${BASE_URL}/update/happyhours/${id}`)
+    const res = await axios.post(
+      `${BASE_URL}/update/happyhours/${id}`,
+      formData
+    )
   }
 
   updateHappyHourDealHelper = async (id) => {

@@ -4,13 +4,13 @@ export default class AddHappyHourForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      nameInput: '',
-      locationInput: '',
-      imageInput: ''
+      nameInput: this.props.happyhourName || '',
+      locationInput: this.props.happyhourLocation || '',
+      imageInput: this.props.happyhourImage || ''
     }
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     const target = e.target
     const name = e.target.name
     this.setState({ [name]: target.value })
@@ -52,15 +52,16 @@ export default class AddHappyHourForm extends Component {
                 type="text"
                 placeholder="Name of happy hour establishment"
                 onChange={(e) => this.handleChange(e)}
-                value={this.props.happyhourName}
+                value={this.state.nameInput}
                 name="nameInput"
+                init
               ></input>
               Location:
               <input
                 type="text"
                 placeholder="Location/address"
                 onChange={(e) => this.handleChange(e)}
-                value={this.props.happyhourLocation}
+                value={this.state.locationInput}
                 name="locationInput"
               ></input>{' '}
               Image URL:
@@ -68,7 +69,7 @@ export default class AddHappyHourForm extends Component {
                 type="text"
                 placeholder="Image url"
                 onChange={(e) => this.handleChange(e)}
-                value={this.props.happyhourImage}
+                value={this.state.happyhourImage}
                 name="imageInput"
               ></input>
             </form>
