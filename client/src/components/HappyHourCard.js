@@ -54,6 +54,10 @@ export default class HappyHourCard extends Component {
     this.props.deleteHappyHourHelper(e.target.attributes[0].value)
   }
 
+  cancelAddDeal = (e) => {
+    this.setState({ clicked: false })
+  }
+
   componentDidMount() {
     // console.log('HappyHourCard component mounted')
     // console.log(this.props)
@@ -83,11 +87,19 @@ export default class HappyHourCard extends Component {
     let happyHourDeals = arrToMap.map((hhd, idx) => {
       return (
         <HappyHourDeal
+          {...hhd.props}
           key={idx}
           description={hhd.description}
           startTime={hhd.startTime}
           endTime={hhd.endTime}
           dealId={hhd._id}
+          sunday={hhd.sunday}
+          monday={hhd.monday}
+          tuesday={hhd.tuesday}
+          wednesday={hhd.wednesday}
+          thursday={hhd.thursday}
+          friday={hhd.friday}
+          saturday={hhd.saturday}
           deleteHappyHourDealHelper={this.props.deleteHappyHourDealHelper}
           createHappyHourDealHelper={this.props.createHappyHourDealHelper}
         />
@@ -108,11 +120,10 @@ export default class HappyHourCard extends Component {
         <img src={`${happyhour.image}`} alt="hhimage" width="300" />
         <h3>{happyhour.name} </h3>
         <h4>{happyhour.location}</h4>
-        <div className="dealsList">
-          {happyHourDeals}
-
-          {/* <AddHappyHourDealForm /> */}
-        </div>
+        {happyHourDeals.length > 0 ? (
+          <div className="dealsList">{happyHourDeals}</div>
+        ) : null}
+        {/* <div className="dealsList">{happyHourDeals}</div> */}
         <button
           happyhour_id={happyhour._id}
           onClick={this.addDealToHappyHourCard}
@@ -122,6 +133,7 @@ export default class HappyHourCard extends Component {
         {this.state.clicked === true ? (
           <div>
             <AddHappyHourDealForm
+              cancelAddDeal={this.cancelAddDeal}
               happyhour_id={happyhour._id}
               createHappyHourDealHelper={this.props.createHappyHourDealHelper}
             />

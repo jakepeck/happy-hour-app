@@ -31,11 +31,20 @@ label {
   box-shadow: 0.25em 0.25em 1.5em rgba(255, 166, 0, 0.9);
 }
 
+.timeInputContainer {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
 .daysOfWeek-Box {
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr; */
-  width: inherit;
+  grid-template-rows: 1fr 1fr;
+  /* width: inherit; */
+  /* margin: 0 auto; */
+  justify-items: center;
+  align-items: center;
 }
 
 .dealInfo {
@@ -43,6 +52,9 @@ label {
   grid-auto-flow: column;
   position: relative;
   padding: 0.75em;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
 }
 
 .dealDesc {
@@ -63,6 +75,16 @@ label {
   width: 2em;
   border-radius: 300px;
   margin: 0.325em 0.5em 0 0;
+}
+
+.daysDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.daysDiv h4 {
+  padding: 0.2em;
 }
 
 .rightRoundBtn {
@@ -89,10 +111,10 @@ label {
 }
 
 .dealForm {
-  /* display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr; */
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  /* display: flex; */
   max-width: 550px;
   background: white;
   box-shadow: 0.01em 0.01em 0.2em black;
@@ -108,11 +130,15 @@ label {
   border: 2px solid black;
 }
 
+.dealSubmitBtn {
+  margin: 1em;
+}
+
 .timeInputs {
   display: flex;
   align-items: center;
   /* width: inherit; */
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .allHappyHours {
@@ -172,6 +198,7 @@ form {
   min-height: 10em;
   margin: 1em auto;
   border-radius: 2em;
+  border: 2px solid black;
 }
 
 form input {

@@ -3,7 +3,7 @@
 
 ### [LinkedIn](https://linkedin.com/in/jake-peck) | [Github](https://github.com/jakepeck) | [Twitter](https://twitter.com/realjakepeck) 
 ___
-### ![picture of final product](https://i.imgur.com/1MCCBaO.jpg)
+### ![picture of final product](https://i.imgur.com/Vg4mmoe.jpg)
 
 ___
 ## Description
@@ -51,6 +51,10 @@ With respect to the front-end, I want to implement a navigation bar with 'Homepa
 ___
 ## Screenshots
 ___
+![screenshot3](https://i.imgur.com/z92m9VP.jpg)
+
+![screenshot4](https://i.imgur.com/z92m9VP.jpg)
+
 Component hierarchy diagram:
 
 ![screenshot1](https://i.imgur.com/rwwBmw0.jpg)
