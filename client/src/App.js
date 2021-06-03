@@ -56,6 +56,16 @@ export default class App extends Component {
     this.updateState()
   }
 
+  updateHappyHourHelper = async (id) => {
+    console.log('updateHappyHourHelper called')
+    const res = await axios.post(`${BASE_URL}/update/happyhours/${id}`)
+  }
+
+  updateHappyHourDealHelper = async (id) => {
+    console.log('updateHappyHourDealHelper called')
+    const res = await axios.post(`${BASE_URL}/update/deals/${id}`)
+  }
+
   updateState = async () => {
     const res = await axios.get(`${BASE_URL}/happyhours/all`)
     this.setState({ happyhours: res.data.happyhours })
