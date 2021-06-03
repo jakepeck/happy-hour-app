@@ -13,44 +13,13 @@ export default class HappyHourCard extends Component {
     }
   }
 
-  // newDealChange(e) {
-  //   this.setState({ newDeal: e.target.value })
-  // }
-
-  // addDealToHappyHourCard(e) {
-  //   e.preventDefault()
-  //   const myArr = this.state.happyhourdealsArray
-  //   console.log(myArr)
-  //   console.log(this.state.newDeal)
-  //   myArr.push(this.state.newDeal)
-  //   this.setState({ happyhourdealsArray: myArr })
-  // }
-
-  // clearHappyHourCardDeals(e) {
-  //   console.log('Deleting all happy hour deals on a happy hour card')
-  //   this.props.happyhour.deals = []
-  //   this.setState({
-  //     happyhourdealsArray: []
-  //   })
-  // }
-
   addDealToHappyHourCard = (e) => {
     e.preventDefault()
-    // console.log(e)
     this.setState({ clicked: !this.state.clicked })
-    // this.state.clicked = !this.state.clicked
-    console.log(this.state)
-    console.log(e.target)
-
-    console.log('addDealToHappyHourCard being called')
   }
 
   removeHappyHour = async (e) => {
-    // e.preventDefault()
-    console.log(e.target.attributes[0].value)
-    console.log(
-      `Trying to remove happy hour with id of: ${e.target.attributes[0].value}`
-    )
+    e.preventDefault()
     this.props.deleteHappyHourHelper(e.target.attributes[0].value)
   }
 
@@ -58,18 +27,9 @@ export default class HappyHourCard extends Component {
     this.setState({ clicked: false })
   }
 
-  componentDidMount() {
-    // console.log('HappyHourCard component mounted')
-    // console.log(this.props)
-  }
+  componentDidMount() {}
 
   render() {
-    // console.log('rendernig happy hour card')
-    // console.log(this.props)
-    // console.log(`All happy hour deals in HappyHourCard component`)
-    // console.log(this.props.happyhourdeals)
-    // console.log(`Happy hour deals in HappyHourCard component`)
-    // console.log(this.props.happyhour.happyhourdeals)
     const { happyhour } = this.props
     let arrToMap = []
 
@@ -80,9 +40,6 @@ export default class HappyHourCard extends Component {
         }
       }
     }
-
-    // console.log('Array to map is:')
-    // console.log(arrToMap)
 
     let happyHourDeals = arrToMap.map((hhd, idx) => {
       return (
@@ -123,7 +80,6 @@ export default class HappyHourCard extends Component {
         {happyHourDeals.length > 0 ? (
           <div className="dealsList">{happyHourDeals}</div>
         ) : null}
-        {/* <div className="dealsList">{happyHourDeals}</div> */}
         <button
           happyhour_id={happyhour._id}
           onClick={this.addDealToHappyHourCard}
@@ -139,21 +95,6 @@ export default class HappyHourCard extends Component {
             />
           </div>
         ) : null}
-        {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
-          Clear deals
-        </button>
-        <form>
-          <input
-            type="text"
-            placeholder="Type a new deal here"
-            onChange={(e) => this.newDealChange(e)}
-            value={this.state.newDeal}
-          />
-          <br></br>
-          <button onClick={(e) => this.addDealToHappyHourCard(e)}>
-            Add new deal!
-          </button>
-        </form> */}
         <br></br>
       </div>
     )
