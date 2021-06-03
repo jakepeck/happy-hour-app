@@ -1,11 +1,7 @@
-// const HappyHour = require('../models/index')
-// const HappyHourDeal = require('../models/index')
 const { HappyHour, HappyHourDeal } = require('../models')
 
 const createHappyHour = async (req, res) => {
   try {
-    console.log('createHappyHour called')
-    console.log(res.body)
     const happyhour = await new HappyHour(req.body)
     await happyhour.save()
     return res.status(201).json({ happyhour })
@@ -24,7 +20,6 @@ const getAllHappyHourDeals = async (req, res) => {
 }
 
 const CreateHappyHourDeal = async (req, res) => {
-  console.log(`creating a new model for happy hour deal`)
   //Create the new model
   const happyHourDeal = new HappyHourDeal({
     // grab necessary attributes out of req.body
@@ -40,10 +35,10 @@ const CreateHappyHourDeal = async (req, res) => {
     saturday: req.body.saturday,
     happyHour_id: req.params.id
   })
-  console.log('calling save on happyhourdeal')
+
   happyHourDeal.save()
   //Update the parent
-  console.log(`id is: ${req.params.id}`)
+
   const happyHour = await HappyHour.updateOne(
     { _id: req.params.id },
     {
@@ -148,8 +143,7 @@ const addDealByHappyHourId = async (req, res) => {
 
     const happyhourdeal = await new HappyHourDeal(req.body)
     await happyhourdeal.save()
-    // console.log(happyhourdeal)
-    // console.log(res._id)
+
     HappyHour.findOneAndUpdate({ _id: id }, { $push: { deals: res._id } })
     if (happyhourdeal) {
       return res.status(200).json({ happyhourdeal })

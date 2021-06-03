@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import HappyHourCard from '../components/HappyHourCard'
 
 export default class Home extends Component {
   render() {

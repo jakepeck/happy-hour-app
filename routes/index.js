@@ -23,7 +23,6 @@ router.delete('/happyhours/:id', controllers.deleteHappyHour)
 router.delete('/deals/:id', controllers.deleteHappyHourDeal)
 
 router.get('/', (req, res) => {
-  console.log(`Welcome to the home directory`)
   res.send('this is the response in the / route')
 })
 
@@ -42,7 +41,6 @@ router.put('/', (req, res) => {
 router.get(
   '/middleware',
   (req, res, next) => {
-    console.log('this is the console log for middleware route')
     next()
   },
   (req, res) => {
