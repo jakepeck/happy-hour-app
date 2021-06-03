@@ -51,17 +51,18 @@ export default class AddHappyHourDealForm extends Component {
   render() {
     return (
       <div>
-        AddHappyHourDealForm
-        <br />
         <form className="dealForm">
-          Deal Description:
-          <input
-            type="text"
-            placeholder="Enter deal description here"
-            onChange={(e) => this.handleInputChange(e)}
-            value={this.state.newHappyHourDeal}
-            name="description"
-          ></input>
+          <div className="dealDesc">
+            Deal Description:
+            <input
+              type="text"
+              placeholder="Enter deal description here"
+              onChange={(e) => this.handleInputChange(e)}
+              value={this.state.newHappyHourDeal}
+              name="description"
+            ></input>
+          </div>
+
           <div className="timeInputs">
             Start Time:
             <input
@@ -145,7 +146,13 @@ export default class AddHappyHourDealForm extends Component {
               />
             </div>
             <div className="checkbox-Box">
-              <h4>Sun Mon Tue Wed Thu Fri Sat</h4>
+              <h4>Sun</h4>
+              <h4>Mon</h4>
+              <h4>Tue</h4>
+              <h4>Wed</h4>
+              <h4>Thu</h4>
+              <h4>Fri</h4>
+              <h4>Sat</h4>
             </div>
           </div>
         </form>

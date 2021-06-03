@@ -17,13 +17,14 @@ export default class HappyHourDeal extends Component {
     console.log(dealId)
     return (
       <div className="dealInfo">
-        <h4>
+        <h5>
           {startTime} - {endTime}: {description}
-        </h4>
+        </h5>
         <button
           happyhourdeal_ID={dealId}
           onClick={this.removeDeal}
           className="rightRoundBtn"
+          id="dealRemoveBtn"
         >
           X
         </button>

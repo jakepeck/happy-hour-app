@@ -5,8 +5,8 @@ import AddHappyHourDealForm from '../components/AddHappyHourDealForm'
 
 export default class AllHappyHours extends Component {
   render() {
-    console.log('about to call props for allhappyhours')
-    console.log(this.props)
+    // console.log('about to call props for allhappyhours')
+    // console.log(this.props)
     const { happyhours, happyhourdeals } = this.props
     let allhappyhours = happyhours.map((hh, idx) => {
       return (
@@ -24,7 +24,7 @@ export default class AllHappyHours extends Component {
 
     return (
       <div>
-        <h1>All Happy Hours Page</h1>
+        <h1>All Happy Hours</h1>
         <div className="allHappyHours">{allhappyhours}</div>
       </div>
     )
