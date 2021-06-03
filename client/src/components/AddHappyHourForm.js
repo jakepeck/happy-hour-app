@@ -37,7 +37,7 @@ export default class AddHappyHourForm extends Component {
       <div>
         {/* Add a New Happy Hour! */}
         <form className="happyHourForm">
-          Name of establishment:
+          Name:
           <input
             type="text"
             placeholder="Name of happy hour establishment"
@@ -45,7 +45,7 @@ export default class AddHappyHourForm extends Component {
             value={this.state.nameInput}
             name="nameInput"
           ></input>
-          Location/Address:
+          Location:
           <input
             type="text"
             placeholder="Location/address"

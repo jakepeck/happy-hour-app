@@ -18,10 +18,25 @@ export default class Today extends Component {
     let happyhours = this.props.happyhours
     let happyhourdeals = this.props.happyhourdeals
     let arrToMap = []
-    // for (let i = 0; i < happyhourdeals.length; i++){
-    //   for (let j = 0; j < happyhours.length; j++){
-    //     if (happyhourdeals[i].dayToLookFor === true){
-    //       arrToMap.push(happyhourdeals[i])
+    let todaysHappyHourDeals = happyhourdeals.map((hhd, idx) => {
+      if (hhd.dayToLookFor === true) {
+        arrToMap.push(hhd)
+      }
+    })
+    // // for (let i = 0; i < happyhourdeals.length; i++){
+    // //   if (happyhourdeals[i].dayToLookFor === true){
+    // //     for (let j = 0; j < happyhours.length; j++){
+    // //       if (happyhourdeals[i].happyHour_Id === happyhours[j]._id){
+    // //         arrToMap.push(happyhours[j])
+    // //       }
+    // //     }
+    // //   }
+
+    // // }
+
+    // for (let i = 0; i < happyhours.length; i++) {
+    //   for (let j = 0; j < happyhours.happyhourdeals.length; j++) {
+    //     if (happyhours[i].happyhourdeals[j].dayToLookFor === true) {
     //     }
     //   }
     // }

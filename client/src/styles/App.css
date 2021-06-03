@@ -29,6 +29,7 @@ label {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   box-shadow: 0.25em 0.25em 1.5em rgba(255, 166, 0, 0.9);
+  border: transparent;
 }
 
 .timeInputContainer {
@@ -139,6 +140,7 @@ label {
   align-items: center;
   /* width: inherit; */
   justify-content: center;
+  justify-self: right;
 }
 
 .allHappyHours {
@@ -255,7 +257,7 @@ img {
   min-width: 200px;
   width: 50%;
   /* box-shadow: 0.01em 0.01em 0.2em black; */
-  box-shadow: 0.25em 0.25em 1.5em rgba(255, 166, 0, 0.9);
+  box-shadow: 0.25em 0.25em 1.5em #330867;
   /* border: 2px solid black; */
 }
 div {
