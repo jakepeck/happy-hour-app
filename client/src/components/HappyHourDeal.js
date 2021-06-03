@@ -5,9 +5,14 @@ export default class HappyHourDeal extends Component {
     super(props)
   }
 
-  removeDeal = (e) => {
+  removeDeal = async (e) => {
     e.preventDefault()
     this.props.deleteHappyHourDealHelper(e.target.attributes[0].value)
+  }
+
+  updateDeal = async (e) => {
+    e.preventDefault()
+    this.props.updateHappyHourDealHelper(e.target.attributes[0].value)
   }
 
   render() {
@@ -50,7 +55,7 @@ export default class HappyHourDeal extends Component {
 
         <button
           happyhourdeal_id={dealId}
-          onClick={(e) => this.props.updateHappyHourDealHelper(e)}
+          onClick={this.updateDeal}
           className="updateBtn"
           id="dealUpdateBtn"
         >

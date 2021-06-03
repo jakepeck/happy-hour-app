@@ -19,9 +19,12 @@ export default class HappyHourCard extends Component {
     this.setState({ clicked: !this.state.clicked })
   }
 
-  updateHappyHour = (e) => {
+  updateHappyHour = async (e) => {
     e.preventDefault()
+    console.log('updateHappyHour claled in happyhorucard.js')
     this.setState({ updateClicked: !this.state.updateClicked })
+    // console.log(e.target.attributes[0].value)
+    // this.props.updateHappyHourHelper(e.target.attributes[0].value)
   }
 
   removeHappyHour = async (e) => {
@@ -31,6 +34,10 @@ export default class HappyHourCard extends Component {
 
   cancelAddDeal = (e) => {
     this.setState({ clicked: false })
+  }
+
+  cancelUpdateHappyHour = (e) => {
+    this.setState({ updateClicked: false })
   }
 
   componentDidMount() {}
@@ -66,7 +73,7 @@ export default class HappyHourCard extends Component {
           deleteHappyHourDealHelper={this.props.deleteHappyHourDealHelper}
           createHappyHourDealHelper={this.props.createHappyHourDealHelper}
           updateHappyHourHelper={this.props.updateHappyHourHelper}
-          updateteHappyHourDealHelper={this.props.updateHappyHourDealHelper}
+          updateHappyHourDealHelper={this.props.updateHappyHourDealHelper}
         />
       )
     })
@@ -75,14 +82,24 @@ export default class HappyHourCard extends Component {
       <div>
         {this.state.updateClicked === true ? (
           <div>
-            <div>update is true</div>
+            <div>
+              update is true
+              <AddHappyHourForm
+                cancelUpdateHappyHour={this.cancelUpdateHappyHour}
+                updateClicked={this.state.updateClicked}
+                happyhourName={happyhour.name}
+                happyhourLocation={happyhour.location}
+                happyhourImage={happyhour.image}
+                happyhour_id={happyhour._id}
+              />
+            </div>
           </div>
         ) : (
           <div>
             <div className="allHappyHoursDisplayCard">
               <button
                 happyhour_id={happyhour._id}
-                onClick={(e) => this.props.updateHappyHourHelper(e)}
+                onClick={this.updateHappyHour}
                 className="updateBtn"
                 id="hhUpdateBtn"
               >

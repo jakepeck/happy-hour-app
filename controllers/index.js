@@ -10,6 +10,29 @@ const createHappyHour = async (req, res) => {
   }
 }
 
+const updateHappyHour = async (req, res) => {
+  try {
+    console.log(req.body)
+    const { id } = req.params
+    await HappyHour.findByIdAndUpdate(
+      id,
+      req.body,
+      { new: true },
+      (err, happyhour) => {
+        if (err) {
+          res.status(500).send(err)
+        }
+        if (!happyhour) {
+          res.status(500).send('Happy hour not found!')
+        }
+        return res.status(200).json(happyhour)
+      }
+    )
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getAllHappyHourDeals = async (req, res) => {
   try {
     const happyhourdeals = await HappyHourDeal.find()
@@ -80,28 +103,6 @@ const deleteHappyHourDeal = async (req, res) => {
       return res.status(200).send('Happy hour deal deleted')
     }
     throw new Error('Happy hour deal not found')
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const updateHappyHour = async (req, res) => {
-  try {
-    const { id } = req.params
-    await HappyHour.findByIdAndUpdate(
-      id,
-      req.body,
-      { new: true },
-      (err, happyhour) => {
-        if (err) {
-          res.status(500).send(err)
-        }
-        if (!happyhour) {
-          res.status(500).send('Happy hour not found!')
-        }
-        return res.status(200).json(happyhour)
-      }
-    )
   } catch (error) {
     return res.status(500).send(error.message)
   }
