@@ -62,6 +62,7 @@ export default class App extends Component {
       `${BASE_URL}/update/happyhours/${id}`,
       formData
     )
+    this.updateState()
   }
 
   updateHappyHourDealHelper = async (id) => {

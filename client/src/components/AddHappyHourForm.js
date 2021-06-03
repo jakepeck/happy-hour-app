@@ -39,6 +39,7 @@ export default class AddHappyHourForm extends Component {
     console.log(this.props.happyhour_id)
     this.props.updateHappyHourHelper(this.props.happyhour_id, formData)
     // this.props.history.push('/allhappyhours')
+    this.props.cancelUpdateHappyHour(e)
   }
 
   render() {
