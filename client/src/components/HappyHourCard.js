@@ -91,6 +91,7 @@ export default class HappyHourCard extends Component {
                 happyhourLocation={happyhour.location}
                 happyhourImage={happyhour.image}
                 happyhour_id={happyhour._id}
+                updateHappyHourHelper={this.props.updateHappyHourHelper}
               />
             </div>
           </div>

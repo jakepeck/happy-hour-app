@@ -69,7 +69,7 @@ export default class AddHappyHourForm extends Component {
                 type="text"
                 placeholder="Image url"
                 onChange={(e) => this.handleChange(e)}
-                value={this.state.happyhourImage}
+                value={this.state.imageInput}
                 name="imageInput"
               ></input>
             </form>
