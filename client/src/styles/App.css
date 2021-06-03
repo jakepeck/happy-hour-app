@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Poppins&display=swap');
+
 body {
   /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
   background-image: linear-gradient(to bottom, #30cfd0 0%, #330867 100%);
   min-height: 120vh;
   height: 100vmax;
+  font-family: 'Poppins', sans-serif;
 }
 
 .App {
@@ -81,11 +84,12 @@ label {
   justify-content: space-between;
   align-items: center;
   /* color: white; */
-  background-color: rgba(61, 72, 230, 0.616);
-  /* opacity: 80%; */
+  background-color: #3d2888;
+  opacity: 90%;
+  /* background-image: linear-gradient(to top, #3d2888 0%, #330867 100%); */
   padding: 1em;
   min-height: 2em;
-  font-family: 'Georgia';
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar a {
@@ -111,12 +115,13 @@ form {
   width: 35em;
   min-height: 10em;
   margin: 1em auto;
-  border-radius: 0.25em;
+  border-radius: 2em;
 }
 
 form input {
   display: block;
-  padding: 0.25em;
+  padding: 0.5em;
+  font-family: 'Poppins', sans-serif;
 }
 
 #root {
@@ -125,10 +130,22 @@ form input {
 
 .navlinks {
   color: black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.submitBtn {
+  border: transparent;
+  background-color: white;
+}
+
+.homepageString {
+  max-width: 60vw;
 }
 
 .myImg {
-  max-width: 60%;
+  max-width: 70%;
+  margin: 0;
 }
 
 img {
@@ -161,16 +178,18 @@ h2 {
   font-weight: normal;
 }
 
-h1 {
-  font-family: 'Georgia';
-  color: white;
-}
-
 h1,
 h2,
 h3,
 h4 {
   margin: 0;
+}
+
+h1 {
+  font-family: 'Euphoria Script', cursive;
+  color: white;
+  font-size: calc(3em + 1vmin);
+  margin: 0.5em auto;
 }
 
 .checkbox-Box {
@@ -180,7 +199,7 @@ h4 {
 button {
   padding: 0.5em 2em;
   background-color: transparent;
-  font-family: 'Georgia';
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
   cursor: pointer;
   margin: 1em auto;

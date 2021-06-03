@@ -63,7 +63,9 @@ export default class AddHappyHourForm extends Component {
           ></input>
           {/* <input type="time" step="3600" placeholder="start time:"></input> */}
         </form>
-        <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
+        <button onClick={(e) => this.handleSubmit(e)} className="submitBtn">
+          Submit
+        </button>
       </div>
     )
   }
