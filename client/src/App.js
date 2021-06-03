@@ -97,6 +97,8 @@ export default class App extends Component {
                   deleteHappyHourHelper={this.deleteHappyHourHelper}
                   deleteHappyHourDealHelper={this.deleteHappyHourDealHelper}
                   createHappyHourDealHelper={this.createHappyHourDealHelper}
+                  updateHappyHourDealHelper={this.updateHappyHourDealHelper}
+                  updateHappyHourHelper={this.updateHappyHourHelper}
                 />
               )}
             />

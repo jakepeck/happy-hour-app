@@ -16,6 +16,8 @@ export default class AllHappyHours extends Component {
           deleteHappyHourHelper={this.props.deleteHappyHourHelper}
           deleteHappyHourDealHelper={this.props.deleteHappyHourDealHelper}
           createHappyHourDealHelper={this.props.createHappyHourDealHelper}
+          updateHappyHourHelper={this.props.updateHappyHourHelper}
+          updateteHappyHourDealHelper={this.props.updateHappyHourDealHelper}
         />
       )
     })

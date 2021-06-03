@@ -47,8 +47,18 @@ export default class HappyHourDeal extends Component {
         <h5>
           {startTime} - {endTime}: {description}
         </h5>
+
         <button
-          happyhourdeal_ID={dealId}
+          happyhourdeal_id={dealId}
+          onClick={(e) => this.props.updateHappyHourDealHelper(e)}
+          className="updateBtn"
+          id="dealUpdateBtn"
+        >
+          U
+        </button>
+
+        <button
+          happyhourdeal_id={dealId}
           onClick={this.removeDeal}
           className="rightRoundBtn"
           id="dealRemoveBtn"
