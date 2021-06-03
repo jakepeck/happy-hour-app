@@ -16,10 +16,16 @@ export default class HappyHourDeal extends Component {
     const { description, startTime, endTime, dealId } = this.props
     console.log(dealId)
     return (
-      <div>
-        {description} {startTime} - {endTime}
-        <button happyhourdeal_ID={dealId} onClick={this.removeDeal}>
-          Remove Deal
+      <div className="dealInfo">
+        <h4>
+          {startTime} - {endTime}: {description}
+        </h4>
+        <button
+          happyhourdeal_ID={dealId}
+          onClick={this.removeDeal}
+          className="rightRoundBtn"
+        >
+          X
         </button>
       </div>
     )

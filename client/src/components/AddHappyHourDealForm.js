@@ -4,7 +4,7 @@ export default class AddHappyHourDealForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newHappyHourDeal: '',
+      description: '',
       startTime: '',
       endTime: '',
       sunday: false,
@@ -32,7 +32,7 @@ export default class AddHappyHourDealForm extends Component {
     console.log('Form submit button clicked')
     console.log(e)
     let formData = {
-      newHappyHourDeal: this.state.newHappyHourDeal,
+      description: this.state.description,
       startTime: this.state.startTime,
       endTime: this.state.endTime,
       sunday: this.state.sunday,
@@ -43,9 +43,9 @@ export default class AddHappyHourDealForm extends Component {
       friday: this.state.friday,
       saturday: this.state.saturday
     }
-    this.props.createHappyHour2(formData)
+    this.props.createHappyHourDealHelper(this.props.happyhour_id, formData)
     console.log(this.props)
-    this.props.history.push('/allhappyhours')
+    // this.props.history.push('/allhappyhours')
   }
 
   render() {
@@ -60,7 +60,7 @@ export default class AddHappyHourDealForm extends Component {
             placeholder="Enter deal description here"
             onChange={(e) => this.handleInputChange(e)}
             value={this.state.newHappyHourDeal}
-            name="newHappyHourDeal"
+            name="description"
           ></input>
           <div className="timeInputs">
             Start Time:

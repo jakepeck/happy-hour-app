@@ -1,5 +1,11 @@
+body {
+  /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
 .App {
   text-align: center;
+  height: 100vmax;
 }
 
 .App-logo {
@@ -24,6 +30,29 @@ label {
   grid-template-rows: 1fr 1fr;
 } */
 
+.dealInfo {
+  display: inline-flex;
+}
+
+.rightRoundBtn {
+  float: right;
+  border-radius: 300px;
+  padding: 0em;
+  margin: 0;
+  max-width: 2em;
+  max-height: 2em;
+  justify-self: flex-end;
+  background-color: transparent;
+  border-color: rgba(61, 72, 230, 0.616);
+  color: rgba(61, 72, 230, 0.616);
+}
+
+#big {
+  width: 5em;
+  height: 5em;
+  margin: 1em;
+}
+
 .dealForm {
   /* display: grid;
   grid-template-rows: 1fr 1fr;
@@ -35,12 +64,23 @@ label {
   display: flex;
 }
 
+.allHappyHours {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.allHappyHoursDisplayCard {
+  border-radius: 20px;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  margin: 1em;
+}
+
 .navbar {
   justify-content: space-between;
   align-items: center;
-  color: white;
+  /* color: white; */
   background-color: rgba(61, 72, 230, 0.616);
-  opacity: 80%;
+  /* opacity: 80%; */
   padding: 1em;
   min-height: 2em;
   font-family: 'Georgia';
@@ -51,6 +91,10 @@ label {
   color: white;
   font-weight: bold;
   margin-left: 0.5em;
+}
+
+.myCard {
+  width: 60vw;
 }
 
 form {
@@ -73,10 +117,28 @@ form input {
   padding: 0.25em;
 }
 
+#root {
+  height: 100vh;
+}
+
+.navlinks {
+  color: black;
+}
+
+.myImg {
+  max-width: 60%;
+}
+
+img {
+  margin: 2em 0 1em 3em;
+  border-radius: 2em;
+  min-width: 200px;
+}
 div {
   background-size: cover;
-  border: 1px solid black;
-  background-color: rgba(61, 72, 230, 0.616);
+  /* border: 1px solid black; */
+  /* background-color: rgba(61, 72, 230, 0.616);
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
 }
 
 .allHappyHours {
@@ -90,7 +152,7 @@ button,
 input {
   outline: none;
   border: 2px solid black;
-  border-radius: 0.25em;
+  border-radius: 1em;
 }
 h2 {
   text-align: left;
@@ -114,7 +176,7 @@ h4 {
 
 button {
   padding: 0.5em 2em;
-  background-color: white;
+  background-color: transparent;
   font-family: 'Georgia';
   font-weight: bold;
   cursor: pointer;
@@ -136,6 +198,10 @@ button {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+header {
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
 }
 
 .App-link {

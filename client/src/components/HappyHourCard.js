@@ -40,7 +40,7 @@ export default class HappyHourCard extends Component {
     this.setState({ clicked: !this.state.clicked })
     // this.state.clicked = !this.state.clicked
     console.log(this.state)
-    console.log(e.target.attributes[0].value)
+    console.log(e.target)
 
     console.log('addDealToHappyHourCard being called')
   }
@@ -89,35 +89,44 @@ export default class HappyHourCard extends Component {
           endTime={hhd.endTime}
           dealId={hhd._id}
           deleteHappyHourDealHelper={this.props.deleteHappyHourDealHelper}
+          createHappyHourDealHelper={this.props.createHappyHourDealHelper}
         />
       )
     })
 
     return (
       <div className="allHappyHoursDisplayCard">
-        <button happyhour_id={happyhour._id} onClick={this.removeHappyHour}>
-          Remove {`${happyhour.name}`}
+        <button
+          happyhour_id={happyhour._id}
+          onClick={this.removeHappyHour}
+          className="rightRoundBtn"
+          id="big"
+        >
+          X
         </button>{' '}
-        <br />
+        <div></div>
         <img src={`${happyhour.image}`} alt="hhimage" width="300" />
-        <br></br>
-        {happyhour.name} <br></br>
-        {happyhour.location}
+        <h3>{happyhour.name} </h3>
+        <h4>{happyhour.location}</h4>
         <div className="dealsList">
           {happyHourDeals}
-          <button
-            happyhour_id={happyhour._id}
-            onClick={this.addDealToHappyHourCard}
-          >
-            Add New Deal to {happyhour.name}
-          </button>
-          {this.state.clicked === true ? (
-            <div>
-              <AddHappyHourDealForm />
-            </div>
-          ) : null}
+
           {/* <AddHappyHourDealForm /> */}
         </div>
+        <button
+          happyhour_id={happyhour._id}
+          onClick={this.addDealToHappyHourCard}
+        >
+          Add New Deal to {happyhour.name}
+        </button>
+        {this.state.clicked === true ? (
+          <div>
+            <AddHappyHourDealForm
+              happyhour_id={happyhour._id}
+              createHappyHourDealHelper={this.props.createHappyHourDealHelper}
+            />
+          </div>
+        ) : null}
         {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals
         </button>
