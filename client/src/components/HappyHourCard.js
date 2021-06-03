@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import AddHappyHourDealForm from './AddHappyHourDealForm'
+import AddHappyHourForm from './AddHappyHourForm'
 import HappyHourDeal from './HappyHourDeal'
 
 export default class HappyHourCard extends Component {
@@ -6,7 +8,8 @@ export default class HappyHourCard extends Component {
     super(props)
     this.state = {
       happyhours: props.happyhours,
-      happyhourdeals: props.happyhourdeals
+      happyhourdeals: props.happyhourdeals,
+      clicked: false
     }
   }
 
@@ -31,10 +34,14 @@ export default class HappyHourCard extends Component {
   //   })
   // }
 
-  addDealToHappyHourCard(e) {
-    // console.log(e)
-    console.log(e.target.attributes[0].value)
+  addDealToHappyHourCard = (e) => {
     e.preventDefault()
+    // console.log(e)
+    this.setState({ clicked: !this.state.clicked })
+    // this.state.clicked = !this.state.clicked
+    console.log(this.state)
+    console.log(e.target.attributes[0].value)
+
     console.log('addDealToHappyHourCard being called')
   }
 
@@ -104,6 +111,12 @@ export default class HappyHourCard extends Component {
           >
             Add New Deal to {happyhour.name}
           </button>
+          {this.state.clicked === true ? (
+            <div>
+              <AddHappyHourDealForm />
+            </div>
+          ) : null}
+          {/* <AddHappyHourDealForm /> */}
         </div>
         {/* <button onClick={(e) => this.clearHappyHourCardDeals(e)}>
           Clear deals

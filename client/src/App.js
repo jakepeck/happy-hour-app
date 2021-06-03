@@ -31,8 +31,8 @@ export default class App extends Component {
     console.log('deleteHappyHourHelper called')
     console.log(this.state)
     for (let i = 0; i < this.state.happyhourdeals.length; i++) {
-      if (this.happyhourdeals[i].happyHour_id === id) {
-        this.deleteHappyHourDealHelper(this.happyhourdeals[i]._id)
+      if (this.state.happyhourdeals[i].happyHour_Id === id) {
+        this.deleteHappyHourDealHelper(this.state.happyhourdeals[i]._id)
       }
     }
     let myUpdatedHappyHours = []
@@ -67,6 +67,8 @@ export default class App extends Component {
     console.log('create happy hour 2 called')
     const res = await axios.post(`${BASE_URL}/happyhours/all`, formData)
     console.log(res)
+    // console.log(this.props)
+    // this.props.history.push('/allhappyhours')
     // this.setState({happyhours: [...happyhours, res.data]})
   }
 
@@ -80,6 +82,8 @@ export default class App extends Component {
   //   const res = await axios.post(`${BASE_URL}/happyhours/deals`)
   //   // console.log(res)
   // }
+
+  createHappyHourDealHelper = async () => {}
 
   async componentDidMount() {
     // console.log(this.state)

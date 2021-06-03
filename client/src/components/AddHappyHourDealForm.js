@@ -27,12 +27,34 @@ export default class AddHappyHourDealForm extends Component {
     })
   }
 
+  handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log('Form submit button clicked')
+    console.log(e)
+    let formData = {
+      newHappyHourDeal: this.state.newHappyHourDeal,
+      startTime: this.state.startTime,
+      endTime: this.state.endTime,
+      sunday: this.state.sunday,
+      monday: this.state.monday,
+      tuesday: this.state.tuesday,
+      wednesday: this.state.wednesday,
+      thursday: this.state.thursday,
+      friday: this.state.friday,
+      saturday: this.state.saturday
+    }
+    this.props.createHappyHour2(formData)
+    console.log(this.props)
+    this.props.history.push('/allhappyhours')
+  }
+
   render() {
     return (
       <div>
         AddHappyHourDealForm
         <br />
-        <form>
+        <form className="dealForm">
+          Deal Description:
           <input
             type="text"
             placeholder="Enter deal description here"
@@ -40,94 +62,94 @@ export default class AddHappyHourDealForm extends Component {
             value={this.state.newHappyHourDeal}
             name="newHappyHourDeal"
           ></input>
-
-          <input
-            type="time"
-            step="3600"
-            placeholder="start time:"
-            onChange={(e) => this.handleInputChange(e)}
-            value={this.state.startTime}
-          ></input>
-
-          <input
-            type="time"
-            step="3600"
-            placeholder="end time:"
-            onChange={(e) => this.handleInputChange(e)}
-            value={this.state.endTime}
-          ></input>
-
-          <div className="checkbox-Box">
+          <div className="timeInputs">
+            Start Time:
             <input
-              name="sunday"
-              type="checkbox"
-              checked={this.state.sunday}
+              type="text"
+              placeholder="6pm"
               onChange={(e) => this.handleInputChange(e)}
-            />
+              value={this.state.startTime}
+              name="startTime"
+            ></input>
+            End Time:
             <input
-              name="monday"
-              type="checkbox"
-              checked={this.state.monday}
+              type="text"
+              placeholder="9pm"
               onChange={(e) => this.handleInputChange(e)}
-            />
-            <input
-              name="tuesday"
-              type="checkbox"
-              checked={this.state.tuesday}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-
-            <input
-              name="wednesday"
-              type="checkbox"
-              checked={this.state.wednesday}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-            <input
-              name="thursday"
-              type="checkbox"
-              checked={this.state.thursday}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-            <input
-              name="friday"
-              type="checkbox"
-              checked={this.state.friday}
-              onChange={(e) => this.handleInputChange(e)}
-            />
-            <input
-              name="saturday"
-              type="checkbox"
-              checked={this.state.saturday}
-              onChange={(e) => this.handleInputChange(e)}
-            />
+              value={this.state.endTime}
+              name="endTime"
+            ></input>
           </div>
-          <div className="checkbox-Box">
-            <h4>Sun Mon Tue Wed Thu Fri Sat</h4>
-          </div>
+          {/* <div className="timeInputs">
+            Start Time:
+            <input
+              type="time"
+              step="3600"
+              placeholder="start time:"
+              onChange={(e) => this.handleInputChange(e)}
+              value={this.state.startTime}
+            ></input>
+            End Time:
+            <input
+              type="time"
+              step="3600"
+              placeholder="end time:"
+              onChange={(e) => this.handleInputChange(e)}
+              value={this.state.endTime}
+            ></input>
+          </div> */}
+          <div className="daysOfWeek-Box">
+            <div className="checkbox-Box">
+              <input
+                name="sunday"
+                type="checkbox"
+                checked={this.state.sunday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
+              <input
+                name="monday"
+                type="checkbox"
+                checked={this.state.monday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
+              <input
+                name="tuesday"
+                type="checkbox"
+                checked={this.state.tuesday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
 
-          {/* <input type="checkbox" name="sunday">
-            Sun
-          </input>
-          <input type="checkbox" name="monday">
-            Mon
-          </input>
-          <input type="checkbox" name="tuesday">
-            Tue
-          </input>
-          <input type="checkbox" name="wednesday">
-            Wed
-          </input>
-          <input type="checkbox" name="thursday">
-            Thu
-          </input>
-          <input type="checkbox" name="friday">
-            Fri
-          </input>
-          <input type="checkbox" name="saturday">
-            Sat
-          </input> */}
+              <input
+                name="wednesday"
+                type="checkbox"
+                checked={this.state.wednesday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
+              <input
+                name="thursday"
+                type="checkbox"
+                checked={this.state.thursday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
+              <input
+                name="friday"
+                type="checkbox"
+                checked={this.state.friday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
+              <input
+                name="saturday"
+                type="checkbox"
+                checked={this.state.saturday}
+                onChange={(e) => this.handleInputChange(e)}
+              />
+            </div>
+            <div className="checkbox-Box">
+              <h4>Sun Mon Tue Wed Thu Fri Sat</h4>
+            </div>
+          </div>
         </form>
+        <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
       </div>
     )
   }

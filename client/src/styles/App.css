@@ -17,6 +17,23 @@ label {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
+/* 
+.daysOfWeek-Box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+} */
+
+.dealForm {
+  /* display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr; */
+  display: flex;
+}
+
+.timeInputs {
+  display: flex;
+}
 
 .navbar {
   justify-content: space-between;

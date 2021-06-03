@@ -17,6 +17,7 @@ export default class AddHappyHour extends Component {
         <h1>Add a Happy Hour Here</h1>
         {/* <button>Add New Happy Hour</button> */}
         <AddHappyHourForm
+          {...this.props}
           createHappyHour={this.props.createHappyHour}
           createHappyHour2={this.props.createHappyHour2}
         />

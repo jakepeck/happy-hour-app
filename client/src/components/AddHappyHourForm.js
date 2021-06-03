@@ -26,7 +26,8 @@ export default class AddHappyHourForm extends Component {
       image: this.state.imageInput
     }
     this.props.createHappyHour2(formData)
-    // this.props.history.push('/allhappyhours')
+    console.log(this.props)
+    this.props.history.push('/allhappyhours')
   }
 
   render() {
