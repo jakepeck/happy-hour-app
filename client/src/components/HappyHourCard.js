@@ -128,7 +128,7 @@ export default class HappyHourCard extends Component {
           happyhour_id={happyhour._id}
           onClick={this.addDealToHappyHourCard}
         >
-          Add New Deal to {happyhour.name}
+          Add New Deal
         </button>
         {this.state.clicked === true ? (
           <div>
