@@ -62,7 +62,7 @@ export default class AddHappyHourDealForm extends Component {
     console.log(this.props.happyhourdeal_id)
     this.props.updateHappyHourDealHelper(this.props.happyhourdeal_id, formData)
     // this.props.history.push('/allhappyhours')
-    this.props.cancelUpdateDeal(e)
+    // this.props.cancelUpdateDeal(e)
   }
 
   render() {
@@ -270,7 +270,7 @@ export default class AddHappyHourDealForm extends Component {
               </div>
             </form>
             <button
-              onClick={(e) => this.props.cancelUpdateHappyHourDeal(e)}
+              onClick={(e) => this.props.cancelAddDeal(e)}
               className="dealSubmitBtn"
             >
               Cancel
