@@ -43,15 +43,21 @@ export default class HappyHourDeal extends Component {
     const days = daysArr.map((day, idx) => {
       if (idx === 6) {
         return day === true ? (
-          <h4 style={{ color: 'rgba(255, 166, 0, 0.9)' }}> {shortDays[idx]}</h4>
+          <h4 key={idx} style={{ color: 'rgba(255, 166, 0, 0.9)' }}>
+            {' '}
+            {shortDays[idx]}
+          </h4>
         ) : (
-          <h4>{shortDays[idx]}</h4>
+          <h4 key={idx}>{shortDays[idx]}</h4>
         )
       } else {
         return day === true ? (
-          <h4 style={{ color: 'rgba(255, 166, 0, 0.9)' }}> {shortDays[idx]}</h4>
+          <h4 key={idx} style={{ color: 'rgba(255, 166, 0, 0.9)' }}>
+            {' '}
+            {shortDays[idx]}
+          </h4>
         ) : (
-          <h4> {shortDays[idx]}</h4>
+          <h4 key={idx}> {shortDays[idx]}</h4>
         )
       }
     })

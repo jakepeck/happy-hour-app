@@ -53,7 +53,6 @@ export default class AddHappyHourForm extends Component {
                   onChange={(e) => this.handleChange(e)}
                   value={this.state.nameInput}
                   name="nameInput"
-                  init
                 ></input>
                 Location:
                 <input
