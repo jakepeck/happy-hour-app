@@ -102,6 +102,7 @@ export default class HappyHourCard extends Component {
                   id="hhUpdateBtn"
                 >
                   <img
+                    happyhour_id={happyhour._id}
                     src="https://i.imgur.com/ADftVwr.png"
                     className="btnImg"
                     alt="update"

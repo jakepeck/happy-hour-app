@@ -11,7 +11,6 @@ export default class HappyHourDeal extends Component {
 
   removeDeal = async (e) => {
     e.preventDefault()
-    console.log(`removeDeal`, e.target.attributes[0].value)
     this.props.deleteHappyHourDealHelper(e.target.attributes[0].value)
   }
 
