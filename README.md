@@ -3,18 +3,16 @@
 
 ### [LinkedIn](https://linkedin.com/in/jake-peck) | [Github](https://github.com/jakepeck) | [Twitter](https://twitter.com/realjakepeck) 
 ___
-### ![picture of final product](https://i.imgur.com/Vg4mmoe.jpg)
+### ![picture of final product](https://i.imgur.com/T0EIHWn.png)
 
 ___
 ## Description
 ___
-During the week I often decide to go out and treat myself at a local bar, pub, or restaurant for some drinks and food. While the wining and dining is often incredible, it can weigh pretty heavily on the wallet after a while. So I can reward myself but also save a dime here or there,  I often attend the same restaurants on basically a rotating schedule to take advantage of all the deals near me. 
+During the week I often decide to go out and treat myself at a local bar, pub, or restaurant for some food and drinks. While I love wining and dining in Chicago, it can weigh pretty heavy on the wallet after a while. The solution? Happy hour. 
 
-HappyHours is a MERN application that allows users to post information about happy hours in the database, as well as update, delete, and retrieve happy hour information in their area easily so they can more easily keep track of great deals. 
+There's not much better than enjoying delicious food and drinks, except for getting that same experience at a discounted price! In order to keep track of all of the great deals Chicago has to offer, I created a full-stack application.
 
-Users can also create a list of their favorite happy hours, or search for happy hours happening on a specific day of the week, or even the current day to make finding that 50% off Fireball shot that much easier.
-
-
+Happy Hour App is a MERN application that allows users to retrieve information about happy hours and happy hour deals in the database, as well as create, update, and delete happy hour information easily so they can spend less time looking up happy hour information and more time enjoying happy hour deals. 
 ___
 ## Technologies Used
 ___
@@ -30,46 +28,47 @@ ___
 ___
 ## Getting Started
 ___
-[Heroku Deployment Link]()
 
-[Trello Board](https://trello.com/c/uvet01Iu/10-chd)
 
-I plan to create a JSON file representing the objects / seed my database with a file of objects representing happy hours and deals nested within.  
 
-Each happy hour will have a designated start time, end time, day/days of the week, and a list of deals for that happy hour. Each deal will be represented by a dealDescription (either a name for an item that has a price (chicken sandwich: $9), or a general string describing the deal such as "half off all mixed drinks", or "girls night!: ladies drink free").
 
-Additionally, each deal will have a day of week variable or a date variable to represent what day it is on. 
 
-In terms of making requests to the database, I aim to give the user the ability to:
-  - look at happy hours in the database
-  - inspect happy hour information (see deals & times)
-  - add new happy hours
-  - add new deals to existing happy hours
-  - update/remove existing deals in existing happy hours
 
-With respect to the front-end, I want to implement a navigation bar with 'Homepage', 'All Happy Hours', 'Happy Hours By Day/Happy Hours Today', and a 'Favorite Happy Hours'. 
+Many different end users can enjoy this app. Bar and restaurant owners can add their establishment and add/update deals they are offering to attract business. Teetotallers and bar-hounds alike can use Happy Hour App to find information about the best deals current going on. 
+
+Users have the ability to:
+  - View happy hours and current deals 
+  - Add new happy hours and deals
+  - Update existing happy hours and deals
+  - Remove existing happy hours and deals
+
+Head on over to [Heroku Deployment Link]() to get started! 
+
+For more information on my development, feel free to check out my [Trello Board](https://trello.com/c/uvet01Iu/10-chd).
 ___
 ## Screenshots
 ___
-![screenshot3](https://i.imgur.com/z92m9VP.jpg)
+![screenshot3](https://i.imgur.com/xTS9IFV.png)
+Add Happy Hour Page
 
-![screenshot4](https://i.imgur.com/z92m9VP.jpg)
+![screenshot4](https://i.imgur.com/6ikvake.png)
+Updating Happy Hour Information
 
-Component hierarchy diagram:
 
-![screenshot1](https://i.imgur.com/rwwBmw0.jpg)
 
-Entity relationship diagram:
+![screenshot1]( https://i.imgur.com/eHoaUQn.png)
+Component Hierarchy Diagram:
 
-![screenshot2](https://i.imgur.com/VPNi2gv.jpg)
+![screenshot2](https://i.imgur.com/e9dyk2c.png)
+
+Entity Relationship Diagram:
 ___
 ## Future Updates 
 ___
-- update 1 to be added
-- update 2 to be added
-- update 3 to be added
-  - nested update hopefully not added, this sounds like its probably a complex and difficult update if I have to nest a sub-update
+- Viewing active happy hours by day
+- Linking to an API to get restaurant seed data
 ___
 ## Credits
 ___
-I'd like to thank Jesus
+I'd like to thank Michael Lackey and Andre Pato for being great instructors. Additionally, thanks to 
+[WebGradients](https://webgradients.com/) for the gradients I used in my design!
