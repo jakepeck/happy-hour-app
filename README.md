@@ -57,11 +57,11 @@ Updating Happy Hour Information
 
 
 ![screenshot1]( https://i.imgur.com/eHoaUQn.png)
-Component Hierarchy Diagram:
+Component Hierarchy Diagram
 
 ![screenshot2](https://i.imgur.com/e9dyk2c.png)
 
-Entity Relationship Diagram:
+Entity Relationship Diagram
 ___
 ## Future Updates 
 ___
