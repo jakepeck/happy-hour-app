@@ -1,4 +1,4 @@
-# [HappyHour App]()
+# [HappyHour App](https://whispering-oasis-08122.herokuapp.com/)
 ### Jake Peck | Date: 6/4/2021
 
 ### [LinkedIn](https://linkedin.com/in/jake-peck) | [Github](https://github.com/jakepeck) | [Twitter](https://twitter.com/realjakepeck) 
@@ -42,7 +42,7 @@ Users have the ability to:
   - Update existing happy hours and deals
   - Remove existing happy hours and deals
 
-Head on over to [Heroku Deployment Link]() to get started! 
+Head on over to [Heroku Deployment Link](https://whispering-oasis-08122.herokuapp.com/) to get started! 
 
 For more information on my development, feel free to check out my [Trello Board](https://trello.com/c/uvet01Iu/10-chd).
 ___
