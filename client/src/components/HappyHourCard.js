@@ -21,10 +21,7 @@ export default class HappyHourCard extends Component {
 
   updateHappyHour = async (e) => {
     e.preventDefault()
-    console.log('updateHappyHour claled in happyhorucard.js')
     this.setState({ updateClicked: !this.state.updateClicked })
-    // console.log(e.target.attributes[0].value)
-    // this.props.updateHappyHourHelper(e.target.attributes[0].value)
   }
 
   removeHappyHour = async (e) => {
@@ -77,7 +74,7 @@ export default class HappyHourCard extends Component {
         />
       )
     })
-    console.log(this.state.updateClicked)
+
     return (
       <div>
         {this.state.updateClicked === true ? (
@@ -134,6 +131,7 @@ export default class HappyHourCard extends Component {
                 <div className="dealsList">{happyHourDeals}</div>
               ) : null}
               <button
+                className="addDealBtn"
                 happyhour_id={happyhour._id}
                 onClick={this.addDealToHappyHourCard}
               >

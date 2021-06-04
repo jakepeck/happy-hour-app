@@ -12,8 +12,6 @@ const createHappyHour = async (req, res) => {
 
 const updateHappyHour = async (req, res) => {
   try {
-    console.log(req.params)
-    console.log(req.body)
     const { id } = req.params
     await HappyHour.findByIdAndUpdate(
       id,

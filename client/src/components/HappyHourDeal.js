@@ -16,9 +16,7 @@ export default class HappyHourDeal extends Component {
 
   updateDeal = async (e) => {
     e.preventDefault()
-    console.log('udpatee deal called')
     this.setState({ updateClicked: !this.state.updateClicked })
-    // this.props.updateHappyHourDealHelper(e.target.attributes[0].value)
   }
 
   cancelUpdateDeal = async (e) => {
