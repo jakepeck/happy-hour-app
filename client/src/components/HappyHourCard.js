@@ -115,6 +115,7 @@ export default class HappyHourCard extends Component {
                   id="big"
                 >
                   <img
+                    happyhour_id={happyhour._id}
                     src="https://i.imgur.com/79wJ3Cr.png"
                     className="btnImg"
                     alt="delete1"
@@ -124,7 +125,7 @@ export default class HappyHourCard extends Component {
               </div>
 
               <div></div>
-              <img src={`${happyhour.image}`} alt="hhimage" width="300" />
+              <img src={`${happyhour.image}`} alt="hhimage" width="400" />
               <h3>{happyhour.name} </h3>
               <h4>{happyhour.location}</h4>
               {happyHourDeals.length > 0 ? (

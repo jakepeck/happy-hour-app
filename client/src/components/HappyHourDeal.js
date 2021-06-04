@@ -11,6 +11,7 @@ export default class HappyHourDeal extends Component {
 
   removeDeal = async (e) => {
     e.preventDefault()
+    console.log(`removeDeal`, e.target.attributes[0].value)
     this.props.deleteHappyHourDealHelper(e.target.attributes[0].value)
   }
 
@@ -104,6 +105,7 @@ export default class HappyHourDeal extends Component {
                 id="dealRemoveBtn"
               >
                 <img
+                  happyhourdeal_id={dealId}
                   src="https://i.imgur.com/79wJ3Cr.png"
                   className="btnImg"
                   alt="delete2"
