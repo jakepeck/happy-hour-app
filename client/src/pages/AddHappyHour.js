@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import AddHappyHourForm from '../components/AddHappyHourForm'
-import AddHappyHourDealForm from '../components/AddHappyHourDealForm'
 
 export default class AddHappyHour extends Component {
   constructor(props) {

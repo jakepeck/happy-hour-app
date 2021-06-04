@@ -103,7 +103,6 @@ export default class AddHappyHourDealForm extends Component {
                 </div>
 
                 <div className="daysOfWeek-Box">
-                  {/* <div className="checkbox-Box"> */}
                   <input
                     name="sunday"
                     type="checkbox"
@@ -147,8 +146,7 @@ export default class AddHappyHourDealForm extends Component {
                     checked={this.state.saturday}
                     onChange={(e) => this.handleInputChange(e)}
                   />
-                  {/* </div> */}
-                  {/* <div className="checkbox-Box"> */}
+
                   <h4>S</h4>
                   <h4>M</h4>
                   <h4>T</h4>
@@ -156,7 +154,6 @@ export default class AddHappyHourDealForm extends Component {
                   <h4>T</h4>
                   <h4>F</h4>
                   <h4>S</h4>
-                  {/* </div> */}
                 </div>
               </div>
 
@@ -214,7 +211,6 @@ export default class AddHappyHourDealForm extends Component {
                 </div>
 
                 <div className="daysOfWeek-Box">
-                  {/* <div className="checkbox-Box"> */}
                   <input
                     name="sunday"
                     type="checkbox"
@@ -258,8 +254,7 @@ export default class AddHappyHourDealForm extends Component {
                     checked={this.state.saturday}
                     onChange={(e) => this.handleInputChange(e)}
                   />
-                  {/* </div> */}
-                  {/* <div className="checkbox-Box"> */}
+
                   <h4>S</h4>
                   <h4>M</h4>
                   <h4>T</h4>
@@ -267,7 +262,6 @@ export default class AddHappyHourDealForm extends Component {
                   <h4>T</h4>
                   <h4>F</h4>
                   <h4>S</h4>
-                  {/* </div> */}
                 </div>
               </div>
 

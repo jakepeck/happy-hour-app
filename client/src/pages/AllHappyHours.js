@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import HappyHourCard from '../components/HappyHourCard'
-import AddHappyHourForm from '../components/AddHappyHourForm'
-import AddHappyHourDealForm from '../components/AddHappyHourDealForm'
 
 export default class AllHappyHours extends Component {
   render() {
