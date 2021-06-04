@@ -84,24 +84,35 @@ export default class HappyHourDeal extends Component {
             <h5>
               {startTime} - {endTime}: {description}
             </h5>
+            <div className="dealButtons">
+              <button
+                happyhourdeal_id={dealId}
+                onClick={this.updateDeal}
+                className="updateBtn"
+                id="dealUpdateBtn"
+              >
+                <img
+                  src="https://i.imgur.com/ADftVwr.png"
+                  className="btnImg"
+                  alt="update2"
+                  width="25"
+                />
+              </button>
 
-            <button
-              happyhourdeal_id={dealId}
-              onClick={this.updateDeal}
-              className="updateBtn"
-              id="dealUpdateBtn"
-            >
-              U
-            </button>
-
-            <button
-              happyhourdeal_id={dealId}
-              onClick={this.removeDeal}
-              className="rightRoundBtn"
-              id="dealRemoveBtn"
-            >
-              X
-            </button>
+              <button
+                happyhourdeal_id={dealId}
+                onClick={this.removeDeal}
+                className="rightRoundBtn"
+                id="dealRemoveBtn"
+              >
+                <img
+                  src="https://i.imgur.com/79wJ3Cr.png"
+                  className="btnImg"
+                  alt="delete2"
+                  width="25"
+                />
+              </button>
+            </div>
           </div>
         )}
       </div>

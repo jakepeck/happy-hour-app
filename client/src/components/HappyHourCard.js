@@ -83,7 +83,6 @@ export default class HappyHourCard extends Component {
         {this.state.updateClicked === true ? (
           <div>
             <div>
-              update is true
               <AddHappyHourForm
                 cancelUpdateHappyHour={this.cancelUpdateHappyHour}
                 updateClicked={this.state.updateClicked}
@@ -98,22 +97,35 @@ export default class HappyHourCard extends Component {
         ) : (
           <div>
             <div className="allHappyHoursDisplayCard">
-              <button
-                happyhour_id={happyhour._id}
-                onClick={this.updateHappyHour}
-                className="updateBtn"
-                id="hhUpdateBtn"
-              >
-                U
-              </button>
-              <button
-                happyhour_id={happyhour._id}
-                onClick={this.removeHappyHour}
-                className="rightRoundBtn"
-                id="big"
-              >
-                X
-              </button>{' '}
+              <div className="cardButtons">
+                <button
+                  happyhour_id={happyhour._id}
+                  onClick={this.updateHappyHour}
+                  className="updateBtn"
+                  id="hhUpdateBtn"
+                >
+                  <img
+                    src="https://i.imgur.com/ADftVwr.png"
+                    className="btnImg"
+                    alt="update"
+                    width="50"
+                  />
+                </button>
+                <button
+                  happyhour_id={happyhour._id}
+                  onClick={this.removeHappyHour}
+                  className="rightRoundBtn"
+                  id="big"
+                >
+                  <img
+                    src="https://i.imgur.com/79wJ3Cr.png"
+                    className="btnImg"
+                    alt="delete1"
+                    width="50"
+                  />
+                </button>{' '}
+              </div>
+
               <div></div>
               <img src={`${happyhour.image}`} alt="hhimage" width="300" />
               <h3>{happyhour.name} </h3>
