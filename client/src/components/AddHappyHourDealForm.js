@@ -67,40 +67,40 @@ export default class AddHappyHourDealForm extends Component {
         {this.props.updateClicked === true ? (
           <div>
             <form className="dealForm">
-              <div className="dealDesc">
-                <h4>Deal Description:</h4>
-                <input
-                  type="text"
-                  placeholder="Enter deal description here"
-                  onChange={(e) => this.handleInputChange(e)}
-                  value={this.state.description}
-                  name="description"
-                ></input>
-              </div>
+              {/* <div className="dealDesc"> */}
+              <h4>Deal Description:</h4>
+              <input
+                type="text"
+                placeholder="Enter deal description here"
+                onChange={(e) => this.handleInputChange(e)}
+                value={this.state.description}
+                name="description"
+              ></input>
+              {/* </div> */}
 
               <div className="timeAndDateInputs">
-                <div className="timeInputs">
-                  <div className="timeInputContainer">
-                    <h4>Start Time:</h4>
-                    <input
-                      type="text"
-                      placeholder="6pm"
-                      onChange={(e) => this.handleInputChange(e)}
-                      value={this.state.startTime}
-                      name="startTime"
-                    ></input>
-                  </div>
-                  <div className="timeInputContainer">
-                    <h4>End Time:</h4>
-                    <input
-                      type="text"
-                      placeholder="9pm"
-                      onChange={(e) => this.handleInputChange(e)}
-                      value={this.state.endTime}
-                      name="endTime"
-                    ></input>
-                  </div>
+                {/* <div className="timeInputs"> */}
+                <div className="timeInputContainer">
+                  <h4>Start Time:</h4>
+                  <input
+                    type="text"
+                    placeholder="6pm"
+                    onChange={(e) => this.handleInputChange(e)}
+                    value={this.state.startTime}
+                    name="startTime"
+                  ></input>
                 </div>
+                <div className="timeInputContainer">
+                  <h4>End Time:</h4>
+                  <input
+                    type="text"
+                    placeholder="9pm"
+                    onChange={(e) => this.handleInputChange(e)}
+                    value={this.state.endTime}
+                    name="endTime"
+                  ></input>
+                </div>
+                {/* </div> */}
 
                 <div className="daysOfWeek-Box">
                   <input
@@ -176,39 +176,39 @@ export default class AddHappyHourDealForm extends Component {
         ) : (
           <div>
             <form className="dealForm">
-              <div className="dealDesc">
-                <h4>Deal Description:</h4>
-                <input
-                  type="text"
-                  placeholder="Enter deal description here"
-                  onChange={(e) => this.handleInputChange(e)}
-                  value={this.state.description}
-                  name="description"
-                ></input>
-              </div>
+              {/* <div className="dealDesc"> */}
+              <h4>Deal Description:</h4>
+              <input
+                type="text"
+                placeholder="Enter deal description here"
+                onChange={(e) => this.handleInputChange(e)}
+                value={this.state.description}
+                name="description"
+              ></input>
+              {/* </div> */}
               <div className="timeAndDateInputs">
-                <div className="timeInputs">
-                  <div className="timeInputContainer">
-                    <h4>Start Time:</h4>
-                    <input
-                      type="text"
-                      placeholder="6pm"
-                      onChange={(e) => this.handleInputChange(e)}
-                      value={this.state.startTime}
-                      name="startTime"
-                    ></input>
-                  </div>
-                  <div className="timeInputContainer">
-                    <h4>End Time:</h4>
-                    <input
-                      type="text"
-                      placeholder="9pm"
-                      onChange={(e) => this.handleInputChange(e)}
-                      value={this.state.endTime}
-                      name="endTime"
-                    ></input>
-                  </div>
+                {/* <div className="timeInputs"> */}
+                <div className="timeInputContainer">
+                  <h4>Start Time:</h4>
+                  <input
+                    type="text"
+                    placeholder="6pm"
+                    onChange={(e) => this.handleInputChange(e)}
+                    value={this.state.startTime}
+                    name="startTime"
+                  ></input>
                 </div>
+                <div className="timeInputContainer">
+                  <h4>End Time:</h4>
+                  <input
+                    type="text"
+                    placeholder="9pm"
+                    onChange={(e) => this.handleInputChange(e)}
+                    value={this.state.endTime}
+                    name="endTime"
+                  ></input>
+                </div>
+                {/* </div> */}
 
                 <div className="daysOfWeek-Box">
                   <input

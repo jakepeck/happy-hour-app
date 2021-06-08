@@ -6,6 +6,16 @@ body {
   background-attachment: fixed;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   height: 100vmax;
@@ -53,10 +63,17 @@ label {
 }
 
 .timeInputContainer {
-  display: grid;
+  display: flex;
   grid-template-columns: 3fr 3fr;
-
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+}
+
+.timeInputBox {
+  display: flex;
+  align-items: center;
+  text-align: left;
 }
 
 .updateBtn {
@@ -163,9 +180,10 @@ label {
 
 .dealForm {
   background-image: linear-gradient(to bottom, #30cfd0 -100%, #330867 100%);
-  display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  /* align-content: center; */
   margin: 0;
   color: mintcream;
   box-shadow: 0.01em 0.01em 0.2em black;
@@ -214,6 +232,22 @@ h3 {
   font-size: 2em;
 }
 
+.allHappyHoursDisplayCard img {
+  max-width: -moz-available;
+  max-width: -webkit-fill-available;
+  max-width: fill-available;
+}
+
+.cardButtons img {
+  height: auto;
+  max-width: 2rem;
+}
+
+.dealButtons img {
+  max-width: 1rem;
+  height: auto;
+}
+
 .navbar {
   justify-content: space-between;
   align-items: center;
@@ -234,10 +268,6 @@ h3 {
 
 .myCard {
   max-width: 90vw;
-}
-
-.allHappyHoursDisplayCard form {
-  padding: 0.5em 1em 0.5em 0;
 }
 
 form {
@@ -357,7 +387,7 @@ h1 {
 }
 
 button {
-  padding: 0.5em 2em;
+  padding: 0.5em 1em;
   background-color: mintcream;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
